@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="/assets_admin/scripts/main.js"></script>
+    @include('admin.shares.bot')
     @yield('js')
 </body>
 </html>

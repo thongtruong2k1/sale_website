@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.pages.danh_muc_san_pham.index');
 });
+
+Route::group(['prefix' => '/admin'], function() {
+    Route::group(['prefix' => '/danh-muc-san-pham'], function() {
+        Route::get('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index']);
+        Route::post('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'store']);
+    });
+});

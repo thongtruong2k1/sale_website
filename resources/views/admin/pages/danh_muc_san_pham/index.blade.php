@@ -15,14 +15,22 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <h5 class="card-title">Thêm Mới Danh Mục Sản Phẩm</h5>
-                <form autocomplete="off">
+                @if($errors->any())
+                    @foreach ($errors->all() as $key => $value)
+                    <div class="alert alert-danger" role="alert">
+                        {{ $value }}
+                    </div>
+                    @endforeach
+                @endif
+                <form autocomplete="off" method="post" action="/admin/danh-muc-san-pham/index">
+                    @csrf
                     <div class="position-relative form-group">
                         <label>Tên Danh Mục</label>
-                        <input name="ten_danh_muc" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
+                        <input id="ten_danh_muc" name="ten_danh_muc" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
                     </div>
                     <div class="position-relative form-group">
                         <label>Slug Danh Mục</label>
-                        <input name="slug_danh_muc" placeholder="Nhập vào slug danh mục" type="text" class="form-control">
+                        <input id="slug_danh_muc" name="slug_danh_muc" placeholder="Nhập vào slug danh mục" type="text" class="form-control">
                     </div>
                     <div class="position-relative form-group">
                         <label>Hình Ảnh</label>
@@ -31,8 +39,7 @@
                     <div class="position-relative form-group">
                         <label>Danh Mục Cha</label>
                         <select name="id_danh_muc_cha"class="form-control">
-                            <option>1</option>
-                            <option>2</option>
+                            <option value="">Danh Mục Root</option>
                         </select>
                     </div>
                     <div class="position-relative form-group">
@@ -53,5 +60,27 @@
 </div>
 @endsection
 @section('js')
+    <script>
+        $(document).ready(function() {
+            function toSlug(str) {
+                str = str.toLowerCase();
+                str = str
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '');
+                str = str.replace(/[đĐ]/g, 'd');
+                str = str.replace(/([^0-9a-z-\s])/g, '');
+                str = str.replace(/(\s+)/g, '-');
+                str = str.replace(/-+/g, '-');
+                str = str.replace(/^-+|-+$/g, '');
+                return str;
+            }
+            $("#ten_danh_muc").keyup(function(){
+                var tenDanhMuc = $("#ten_danh_muc").val();
+                var slugDanhMuc = toSlug(tenDanhMuc);
+                $("#slug_danh_muc").val(slugDanhMuc);
+                // $("#slug_danh_muc").val(toSlug($("#ten_danh_muc").val()));
+            });
+        });
 
+    </script>
 @endsection
