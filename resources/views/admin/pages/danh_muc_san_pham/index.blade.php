@@ -40,6 +40,9 @@
                         <label>Danh Mục Cha</label>
                         <select name="id_danh_muc_cha"class="form-control">
                             <option value="">Danh Mục Root</option>
+                            @foreach ($danh_muc_cha as $key => $value)
+                            <option value={{ $value->id }}>{{ $value->ten_danh_muc }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="position-relative form-group">
@@ -55,7 +58,35 @@
         </div>
     </div>
     <div class="col-md-7">
-
+        <div class="main-card mb-3 card">
+            <div class="card-body"><h5 class="card-title">Table bordered</h5>
+                <table class="mb-0 table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Tên Danh Mục</th>
+                            <th class="text-center">Danh Mục Cha</th>
+                            <th class="text-center">Tình Trạng</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data as $key => $value)
+                        <tr>
+                            <th class="text-center" scope="row">{{ $key + 1 }}</th>
+                            <td>{{ $value->ten_danh_muc }}</td>
+                            <td>{{ empty($value->ten_danh_muc_cha) ? 'Root' : $value->ten_danh_muc_cha }}</td>
+                            <td>{{ $value->is_open }}</td>
+                            <td class="text-center">
+                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-primary">Edit</button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

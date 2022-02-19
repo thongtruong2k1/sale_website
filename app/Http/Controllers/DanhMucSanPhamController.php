@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateDanhMucSanPhamRequest;
 use App\Models\DanhMucSanPham;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DanhMucSanPhamController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.danh_muc_san_pham.index');
+        // $data = DanhMucSanPham::all();
+        $danh_muc_cha = DanhMucSanPham::where('id_danh_muc_cha', 0)->get();
+        $sql = 'SELECT a.*, b.ten_danh_muc as `ten_danh_muc_cha`
+                FROM `danh_muc_san_phams` a LEFT JOIN `danh_muc_san_phams` b
+                on a.id_danh_muc_cha = b.id';
+        $data = DB::select($sql);
+        return view('admin.pages.danh_muc_san_pham.index', compact('data', 'danh_muc_cha'));
     }
 
     public function store(CreateDanhMucSanPhamRequest $request)
@@ -19,7 +26,7 @@ class DanhMucSanPhamController extends Controller
             'ten_danh_muc'      =>  $request->ten_danh_muc,
             'slug_danh_muc'     =>  $request->slug_danh_muc,
             'hinh_anh'          =>  $request->hinh_anh,
-            'id_danh_muc_cha'   =>  $request->id_danh_muc_cha,
+            'id_danh_muc_cha'   =>  empty($request->id_danh_muc_cha) ? 0 : $request->id_danh_muc_cha,
             'is_open'           =>  $request->is_open,
         ]);
         // $data = $request->all();
