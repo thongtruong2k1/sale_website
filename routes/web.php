@@ -21,5 +21,7 @@ Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/danh-muc-san-pham'], function() {
         Route::get('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index']);
         Route::post('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'store']);
+
+        Route::get('/doi-trang-thai/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'doiTrangThai']);
     });
 });

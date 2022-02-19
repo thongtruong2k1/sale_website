@@ -8,4 +8,5 @@
 <meta name="msapplication-tap-highlight" content="no">
 <link href="/assets_admin/main.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @css

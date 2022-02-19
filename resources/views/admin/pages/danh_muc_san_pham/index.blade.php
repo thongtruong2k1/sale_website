@@ -34,7 +34,11 @@
                     </div>
                     <div class="position-relative form-group">
                         <label>Hình Ảnh</label>
-                        <input name="hinh_anh" placeholder="Nhập vào hình ảnh" type="text" class="form-control">
+                        <div class="input-group">
+                            <input name="hinh_anh" id="thumbnail" class="form-control" type="text">
+                            <input type="button" class="btn-info" id="lfm" data-input="thumbnail" data-preview="holder" value="Upload">
+                        </div>
+                        <img id="holder" style="margin-top:15px;max-height:100px;">
                     </div>
                     <div class="position-relative form-group">
                         <label>Danh Mục Cha</label>
@@ -76,7 +80,11 @@
                             <th class="text-center" scope="row">{{ $key + 1 }}</th>
                             <td>{{ $value->ten_danh_muc }}</td>
                             <td>{{ empty($value->ten_danh_muc_cha) ? 'Root' : $value->ten_danh_muc_cha }}</td>
-                            <td>{{ $value->is_open }}</td>
+                            <td class="text-center">
+                                <button data-id="{{$value->id}}" class="doiTrangThai btn {{ $value->is_open == 1 ? 'btn-primary' : 'btn-danger'}}">
+                                    {{ $value->is_open == 1 ? 'Hiển Thị' : 'Tạm Tắt'}}
+                                </button>
+                            </td>
                             <td class="text-center">
                                 <button class="btn btn-danger">Delete</button>
                                 <button class="btn btn-primary">Edit</button>
@@ -91,27 +99,61 @@
 </div>
 @endsection
 @section('js')
-    <script>
-        $(document).ready(function() {
-            function toSlug(str) {
-                str = str.toLowerCase();
-                str = str
-                    .normalize('NFD')
-                    .replace(/[\u0300-\u036f]/g, '');
-                str = str.replace(/[đĐ]/g, 'd');
-                str = str.replace(/([^0-9a-z-\s])/g, '');
-                str = str.replace(/(\s+)/g, '-');
-                str = str.replace(/-+/g, '-');
-                str = str.replace(/^-+|-+$/g, '');
-                return str;
+<script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+<script>
+    $('#lfm').filemanager('image');
+</script>
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-            $("#ten_danh_muc").keyup(function(){
-                var tenDanhMuc = $("#ten_danh_muc").val();
-                var slugDanhMuc = toSlug(tenDanhMuc);
-                $("#slug_danh_muc").val(slugDanhMuc);
-                // $("#slug_danh_muc").val(toSlug($("#ten_danh_muc").val()));
+        });
+        function toSlug(str) {
+            str = str.toLowerCase();
+            str = str
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+            str = str.replace(/[đĐ]/g, 'd');
+            str = str.replace(/([^0-9a-z-\s])/g, '');
+            str = str.replace(/(\s+)/g, '-');
+            str = str.replace(/-+/g, '-');
+            str = str.replace(/^-+|-+$/g, '');
+            return str;
+        }
+        $("#ten_danh_muc").keyup(function(){
+            var tenDanhMuc = $("#ten_danh_muc").val();
+            var slugDanhMuc = toSlug(tenDanhMuc);
+            $("#slug_danh_muc").val(slugDanhMuc);
+            // $("#slug_danh_muc").val(toSlug($("#ten_danh_muc").val()));
+        });
+        $(".doiTrangThai").click(function(){
+            var idDanhMuc = $(this).data('id');
+            var self = $(this);
+            $.ajax({
+                url     :     '/admin/danh-muc-san-pham/doi-trang-thai/' + idDanhMuc,
+                type    :     'get',
+                success :     function(res) {
+                    if(res.trangThai) {
+                        toastr.success('Đã đổi trạng thái thành công!');
+                        // Tình trạng mới là true
+                        if(res.tinhTrangDanhMuc){
+                            self.html('Hiển Thị');
+                            self.removeClass('btn-danger');
+                            self.addClass('btn-primary');
+                        } else {
+                            self.html('Tạm Tắt');
+                            self.removeClass('btn-primary');
+                            self.addClass('btn-danger');
+                        }
+                    } else {
+                        toastr.error('Vui lòng không can thiệp hệ thống!');
+                    }
+                },
             });
         });
+    });
 
-    </script>
+</script>
 @endsection
