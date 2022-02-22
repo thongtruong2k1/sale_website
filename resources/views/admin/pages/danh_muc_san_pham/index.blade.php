@@ -86,7 +86,7 @@
                                 </button>
                             </td>
                             <td class="text-center">
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                                <button class="btn btn-danger delete" data-iddelete="{{$value->id}}" data-toggle="modal" data-target="#deleteModal">Delete</button>
                                 <button class="btn btn-primary">Edit</button>
                             </td>
                         </tr>
@@ -109,11 +109,11 @@
         </div>
         <div class="modal-body">
             Bạn có chắc chắn muốn xóa? Điều này không thể hoàn tác.
-            <input type="text" class="form-control" placeholder="Nhập vào id cần xóa" id="idDeleteDanhMuc">
+            <input type="text" class="form-control" placeholder="Nhập vào id cần xóa" id="idDeleteDanhMuc" hidden>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" id="accpectDelete" class="btn btn-danger" data-dismiss="modal">Xóa Danh Mục</button>
         </div>
       </div>
     </div>
@@ -169,6 +169,27 @@
                         }
                     } else {
                         toastr.error('Vui lòng không can thiệp hệ thống!');
+                    }
+                },
+            });
+        });
+        var row;
+        $(".delete").click(function(){
+            row = $(this).closest('tr');
+            var getId = $(this).data('iddelete');
+            $("#idDeleteDanhMuc").val(getId);
+        });
+        $("#accpectDelete").click(function(){
+            var id = $("#idDeleteDanhMuc").val();
+            $.ajax({
+                url     :   '/admin/danh-muc-san-pham/delete/' + id,
+                type    :   'get',
+                success :   function(res) {
+                    if(res.status) {
+                        toastr.success('Đã xóa danh mục thành công!');
+                        row.remove();
+                    } else {
+                        toastr.error('Danh mục không tồn tại!');
                     }
                 },
             });
