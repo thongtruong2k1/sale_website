@@ -36,19 +36,8 @@ class DanhMucSanPhamController extends Controller
 
     public function doiTrangThai($id)
     {
-        // $danh_muc = DanhMucSanPham::where('id', $id)->first();
         $danh_muc = DanhMucSanPham::find($id);
         if($danh_muc) {
-            // $tinh_trang_hien_tai = $danh_muc->is_open;
-            // $tinh_trang_moi = $danh_muc->is_open == 0 ? 1 : 0;
-            // if($tinh_trang_hien_tai) {
-            //     $tinh_trang_moi = 0;
-            // } else {
-            //     $tinh_trang_moi = 1;
-            // }
-            // $tinh_trang_moi = !$tinh_trang_hien_tai;
-            // $sql = 'UPDATE `danh_muc_san_phams` SET `is_open`='. $tinh_trang_moi .' WHERE `id` = ' . $danh_muc->id;
-            // DB::update($sql);
             $danh_muc->is_open = !$danh_muc->is_open;
             $danh_muc->save();
             return response()->json([
@@ -58,6 +47,21 @@ class DanhMucSanPhamController extends Controller
         } else {
             return response()->json([
                 'trangThai'         =>  false,
+            ]);
+        }
+    }
+
+    public function destroy($id)
+    {
+        $danh_muc = DanhMucSanPham::find($id);
+        if($danh_muc) {
+            $danh_muc->delete();
+            return response()->json([
+                'status'  =>  true,
+            ]);
+        } else {
+            return response()->json([
+                'status'  =>  false,
             ]);
         }
     }
