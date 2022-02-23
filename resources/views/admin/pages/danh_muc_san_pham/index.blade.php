@@ -36,7 +36,7 @@
                         <label>Hình Ảnh</label>
                         <div class="input-group">
                             <input name="hinh_anh" id="thumbnail" class="form-control" type="text">
-                            <input type="button" class="btn-info" id="lfm" data-input="thumbnail" data-preview="holder" value="Upload">
+                            <input type="button" class="btn-info lfm" data-input="thumbnail" data-preview="holder" value="Upload">
                         </div>
                         <img id="holder" style="margin-top:15px;max-height:100px;">
                     </div>
@@ -87,7 +87,7 @@
                             </td>
                             <td class="text-center">
                                 <button class="btn btn-danger delete" data-iddelete="{{$value->id}}" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                <button class="btn btn-primary">Edit</button>
+                                <button class="btn btn-primary edit" data-idedit={{$value->id}} data-toggle="modal" data-target="#editModal">Edit</button>
                             </td>
                         </tr>
                         @endforeach
@@ -118,10 +118,60 @@
       </div>
     </div>
 </div>
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Chỉnh Sửa Danh Mục Sản Phẩm</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="position-relative form-group">
+                <label>Tên Danh Mục</label>
+                <input id="ten_danh_muc_edit" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
+            </div>
+            <div class="position-relative form-group">
+                <label>Slug Danh Mục</label>
+                <input id="slug_danh_muc_edit" placeholder="Nhập vào slug danh mục" type="text" class="form-control">
+            </div>
+            <div class="position-relative form-group">
+                <label>Hình Ảnh</label>
+                <div class="input-group">
+                    <input id="hinh_anh_edit" class="form-control" type="text">
+                    <input type="button" class="btn-info lfm" data-input="hinh_anh_edit" data-preview="holder_edit" value="Upload">
+                </div>
+                <img id="holder_edit" style="margin-top:15px;max-height:100px;">
+            </div>
+            <div class="position-relative form-group">
+                <label>Danh Mục Cha</label>
+                <select id="id_danh_muc_cha_edit"class="form-control">
+                    <option value="">Danh Mục Root</option>
+                    @foreach ($danh_muc_cha as $key => $value)
+                    <option value={{ $value->id }}>{{ $value->ten_danh_muc }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="position-relative form-group">
+                <label>Tình Trạng</label>
+                <select id="is_open_edit"class="form-control">
+                    <option value=1>Hiển Thị</option>
+                    <option value=0>Tạm Tắt</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="closeModal" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="accpectDelete" class="btn btn-success" data-dismiss="modal">Cập Nhật Danh Mục</button>
+        </div>
+      </div>
+    </div>
+</div>
 @section('js')
 <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
 <script>
-    $('#lfm').filemanager('image');
+    $('.lfm').filemanager('image');
 </script>
 <script>
     $(document).ready(function() {
@@ -194,7 +244,28 @@
                 },
             });
         });
+        $(".edit").click(function(){
+            var id = $(this).data('idedit');
+            $.ajax({
+                url     :   '/admin/danh-muc-san-pham/edit/' + id,
+                type    :   'get',
+                success :   function(res) {
+                    if(res.status) {
+                        $("#ten_danh_muc_edit").val(res.data.ten_danh_muc);
+                        $("#slug_danh_muc_edit").val(res.data.slug_danh_muc);
+                        $("#hinh_anh_edit").val(res.data.hinh_anh);
+                        $("#holder_edit").attr("src", res.data.hinh_anh);
+                        $("#id_danh_muc_cha_edit").val(res.data.id_danh_muc_cha);
+                        $("#is_open_edit").val(res.data.is_open);
+                    } else {
+                        toastr.error('Danh mục sản phẩm không tồn tại!');
+                        window.setTimeout(function() {
+                            $('#closeModal').click();
+                        }, 1000 );
+                    }
+                },
+            });
+        });
     });
-
 </script>
 @endsection

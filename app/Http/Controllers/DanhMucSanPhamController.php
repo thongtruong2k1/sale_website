@@ -65,4 +65,19 @@ class DanhMucSanPhamController extends Controller
             ]);
         }
     }
+
+    public function edit($id)
+    {
+        $danh_muc = DanhMucSanPham::find($id);
+        if($danh_muc) {
+            return response()->json([
+                'status'  =>  true,
+                'data'    =>  $danh_muc,
+            ]);
+        } else {
+            return response()->json([
+                'status'  =>  false,
+            ]);
+        }
+    }
 }
