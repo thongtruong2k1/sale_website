@@ -21,6 +21,7 @@ class DanhMucSanPhamController extends Controller
 
     public function store(CreateDanhMucSanPhamRequest $request)
     {
+        dd($request->all());
         DanhMucSanPham::create([
             'ten_danh_muc'      =>  $request->ten_danh_muc,
             'slug_danh_muc'     =>  $request->slug_danh_muc,
@@ -78,6 +79,17 @@ class DanhMucSanPhamController extends Controller
             return response()->json([
                 'status'  =>  false,
             ]);
+        }
+    }
+
+    public function edit_form($id)
+    {
+        $danh_muc = DanhMucSanPham::find($id);
+        if($danh_muc) {
+            return view('', compact('danh_muc'));
+        } else {
+            toastr()->error("Danh mục không tồn tại!");
+            return redirect()->back();
         }
     }
 }

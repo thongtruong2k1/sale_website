@@ -147,7 +147,7 @@
             <div class="position-relative form-group">
                 <label>Danh Mục Cha</label>
                 <select id="id_danh_muc_cha_edit"class="form-control">
-                    <option value="">Danh Mục Root</option>
+                    <option value=0>Danh Mục Root</option>
                     @foreach ($danh_muc_cha as $key => $value)
                     <option value={{ $value->id }}>{{ $value->ten_danh_muc }}</option>
                     @endforeach

@@ -25,5 +25,8 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/doi-trang-thai/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'doiTrangThai']);
         Route::get('/delete/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'destroy']);
         Route::get('/edit/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'edit']);
+
+        Route::get('/edit-form/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'edit_form']);
+        Route::post('/update-form', [\App\Http\Controllers\DanhMucSanPhamController::class, 'update_form']);
     });
 });
