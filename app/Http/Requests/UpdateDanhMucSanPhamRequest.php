@@ -24,8 +24,8 @@ class UpdateDanhMucSanPhamRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten_danh_muc'      =>  'required|max:50|unique:danh_muc_san_phams,ten_danh_muc',
-            'slug_danh_muc'     =>  'required|max:50|unique:danh_muc_san_phams,slug_danh_muc',
+            'ten_danh_muc'      =>  'required|max:50|unique:danh_muc_san_phams,ten_danh_muc,'.$this->id,
+            'slug_danh_muc'     =>  'required|max:50|unique:danh_muc_san_phams,slug_danh_muc,'.$this->id,
             'hinh_anh'          =>  'required',
             'id_danh_muc_cha'   =>  'nullable|exists:danh_muc_san_phams,id',
             'is_open'           =>  'required|boolean',

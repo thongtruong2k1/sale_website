@@ -164,7 +164,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" id="closeModal" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="accpectDelete" class="btn btn-success" data-dismiss="modal">Cập Nhật Danh Mục</button>
+          <button type="button" id="accpectUpdate" class="btn btn-success" data-dismiss="modal">Cập Nhật Danh Mục</button>
         </div>
       </div>
     </div>
