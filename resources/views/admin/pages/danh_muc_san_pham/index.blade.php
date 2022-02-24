@@ -129,6 +129,7 @@
           </button>
         </div>
         <div class="modal-body">
+            <input type="text" id="id_edit">
             <div class="position-relative form-group">
                 <label>Tên Danh Mục</label>
                 <input id="ten_danh_muc_edit" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
@@ -163,8 +164,8 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="closeModal" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="accpectUpdate" class="btn btn-success" data-dismiss="modal">Cập Nhật Danh Mục</button>
+          <button type="button" id="closeModalUpdate" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="accpectUpdate" class="btn btn-success">Cập Nhật Danh Mục</button>
         </div>
       </div>
     </div>
@@ -258,12 +259,49 @@
                         $("#holder_edit").attr("src", res.data.hinh_anh);
                         $("#id_danh_muc_cha_edit").val(res.data.id_danh_muc_cha);
                         $("#is_open_edit").val(res.data.is_open);
+                        $("#id_edit").val(res.data.id);
                     } else {
                         toastr.error('Danh mục sản phẩm không tồn tại!');
                         window.setTimeout(function() {
                             $('#closeModal').click();
                         }, 1000 );
                     }
+                },
+            });
+        });
+        $("#accpectUpdate").click(function(){
+            var val_ten_danh_muc    = $("#ten_danh_muc_edit").val();
+            var val_slug_danh_muc   = $("#slug_danh_muc_edit").val();
+            var val_hinh_anh        = $("#hinh_anh_edit").val();
+            var val_id_danh_muc_cha = $("#id_danh_muc_cha_edit").val();
+            var val_is_open         = $("#is_open_edit").val();
+            var val_id              = $("#id_edit").val();
+
+            var payload = {
+                'ten_danh_muc'      :   val_ten_danh_muc,
+                'slug_danh_muc'     :   val_slug_danh_muc,
+                'hinh_anh'          :   val_hinh_anh,
+                'id_danh_muc_cha'   :   val_id_danh_muc_cha,
+                'is_open'           :   val_is_open,
+                'id'                :   val_id,
+            };
+
+            // Gửi payload lên trên back-end bằng con đường ajax
+            $.ajax({
+                url     :   '/admin/danh-muc-san-pham/update',
+                type    :   'post',
+                data    :   payload,
+                success :   function(res) {
+                    if(res.status) {
+                        toastr.success('Danh mục sản phẩm đã được cập nhật!');
+                        $('#closeModalUpdate').click();
+                    }
+                },
+                error   :   function(res) {
+                    var danh_sach_loi = res.responseJSON.errors;
+                    $.each(danh_sach_loi, function(key, value){
+                        toastr.error(value[0]);
+                    });
                 },
             });
         });
