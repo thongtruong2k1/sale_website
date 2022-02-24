@@ -86,7 +86,8 @@ class DanhMucSanPhamController extends Controller
     {
         $danh_muc = DanhMucSanPham::find($id);
         if($danh_muc) {
-            return view('', compact('danh_muc'));
+            $danh_muc_cha = DanhMucSanPham::where('id_danh_muc_cha', 0)->get();
+            return view('admin.pages.danh_muc_san_pham.edit', compact('danh_muc','danh_muc_cha'));
         } else {
             toastr()->error("Danh mục không tồn tại!");
             return redirect()->back();
