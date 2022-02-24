@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateDanhMucSanPhamRequest;
+use App\Http\Requests\UpdateDanhMucSanPhamRequest;
 use App\Models\DanhMucSanPham;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -92,5 +93,15 @@ class DanhMucSanPhamController extends Controller
             toastr()->error("Danh mục không tồn tại!");
             return redirect()->back();
         }
+    }
+
+    public function update_form(UpdateDanhMucSanPhamRequest $request)
+    {
+        $data     = $request->all();
+        $danh_muc = DanhMucSanPham::find($request->id);
+        $danh_muc->update($data);
+
+        toastr()->success('Đã cập nhật danh mục thành công!');
+        return redirect('/admin/danh-muc-san-pham/index');
     }
 }

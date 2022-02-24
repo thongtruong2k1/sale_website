@@ -24,6 +24,7 @@
                 @endif
                 <form autocomplete="off" method="post" action="/admin/danh-muc-san-pham/update-form">
                     @csrf
+                    <input type="text" name="id" value="{{$danh_muc->id}}" hidden>
                     <div class="position-relative form-group">
                         <label>Tên Danh Mục</label>
                         <input value="{{$danh_muc->ten_danh_muc}}" id="ten_danh_muc" name="ten_danh_muc" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
@@ -45,7 +46,9 @@
                         <select name="id_danh_muc_cha"class="form-control">
                             <option value="">Danh Mục Root</option>
                             @foreach ($danh_muc_cha as $key => $value)
-                            <option value={{ $value->id }} {{$danh_muc->id_danh_muc_cha == $value->id ? 'selected' : ''}}>{{ $value->ten_danh_muc }}</option>
+                            <option value={{ $value->id }} {{$danh_muc->id_danh_muc_cha == $value->id ? 'selected' : ''}}>
+                                {{ $value->ten_danh_muc }}
+                            </option>
                             @endforeach
                         </select>
                     </div>
@@ -62,4 +65,32 @@
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+    <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+    <script>
+        $('.lfm').filemanager('image');
+    </script>
+    <script>
+        $(document).ready(function(){
+            function toSlug(str) {
+                str = str.toLowerCase();
+                str = str
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '');
+                str = str.replace(/[đĐ]/g, 'd');
+                str = str.replace(/([^0-9a-z-\s])/g, '');
+                str = str.replace(/(\s+)/g, '-');
+                str = str.replace(/-+/g, '-');
+                str = str.replace(/^-+|-+$/g, '');
+                return str;
+            }
+            $("#ten_danh_muc").keyup(function(){
+                var tenDanhMuc = $("#ten_danh_muc").val();
+                var slugDanhMuc = toSlug(tenDanhMuc);
+                $("#slug_danh_muc").val(slugDanhMuc);
+                // $("#slug_danh_muc").val(toSlug($("#ten_danh_muc").val()));
+            });
+        });
+    </script>
 @endsection

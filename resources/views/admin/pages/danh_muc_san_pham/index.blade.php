@@ -88,6 +88,7 @@
                             <td class="text-center">
                                 <button class="btn btn-danger delete" data-iddelete="{{$value->id}}" data-toggle="modal" data-target="#deleteModal">Delete</button>
                                 <button class="btn btn-primary edit" data-idedit={{$value->id}} data-toggle="modal" data-target="#editModal">Edit</button>
+                                <a class="btn btn-warning" href="/admin/danh-muc-san-pham/edit-form/{{$value->id}}">Edit Form</a>
                             </td>
                         </tr>
                         @endforeach
