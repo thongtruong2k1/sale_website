@@ -12,17 +12,26 @@ class DanhMucSanPhamController extends Controller
 {
     public function index()
     {
+        return view('admin.pages.danh_muc_san_pham.index');
+    }
+
+    public function getData()
+    {
         $danh_muc_cha = DanhMucSanPham::where('id_danh_muc_cha', 0)->get();
+
         $sql = 'SELECT a.*, b.ten_danh_muc as `ten_danh_muc_cha`
                 FROM `danh_muc_san_phams` a LEFT JOIN `danh_muc_san_phams` b
                 on a.id_danh_muc_cha = b.id';
         $data = DB::select($sql);
-        return view('admin.pages.danh_muc_san_pham.index', compact('data', 'danh_muc_cha'));
+
+        return response()->json([
+            'list'          => $data,
+            'danh_muc_cha'  => $danh_muc_cha,
+        ]);
     }
 
     public function store(CreateDanhMucSanPhamRequest $request)
     {
-        dd($request->all());
         DanhMucSanPham::create([
             'ten_danh_muc'      =>  $request->ten_danh_muc,
             'slug_danh_muc'     =>  $request->slug_danh_muc,
@@ -30,10 +39,10 @@ class DanhMucSanPhamController extends Controller
             'id_danh_muc_cha'   =>  empty($request->id_danh_muc_cha) ? 0 : $request->id_danh_muc_cha,
             'is_open'           =>  $request->is_open,
         ]);
-        // $data = $request->all();
-        // DanhMucSanPham::create($data);
-        toastr()->success('Đã thêm mới danh mục thành công!');
-        return redirect('/admin/danh-muc-san-pham/index');
+
+        return response()->json([
+            'trangThai'         =>  true,
+        ]);
     }
 
     public function doiTrangThai($id)
