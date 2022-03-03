@@ -21,5 +21,6 @@ class SanPham extends Model
         'mo_ta_ngan',
         'mo_ta_chi_tiet',
         'id_danh_muc',
+        'is_open'
     ];
 }

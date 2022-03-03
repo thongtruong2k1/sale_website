@@ -24,6 +24,7 @@ class CreateSanPhamsTable extends Migration
             $table->string('mo_ta_ngan');
             $table->string('mo_ta_chi_tiet');
             $table->integer('id_danh_muc');
+            $table->integer('is_open')->default(1);
             $table->timestamps();
         });
     }
