@@ -25,23 +25,23 @@
                 <form autocomplete="off" id="createDanhMuc">
                     <div class="position-relative form-group">
                         <label>Tên Danh Mục</label>
-                        <input id="ten_danh_muc" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
+                        <input id="ten_danh_muc" name="ten_danh_muc" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
                     </div>
                     <div class="position-relative form-group">
                         <label>Slug Danh Mục</label>
-                        <input id="slug_danh_muc" placeholder="Nhập vào slug danh mục" type="text" class="form-control">
+                        <input id="slug_danh_muc" name="slug_danh_muc" placeholder="Nhập vào slug danh mục" type="text" class="form-control">
                     </div>
                     <div class="position-relative form-group">
                         <label>Hình Ảnh</label>
                         <div class="input-group">
-                            <input id="hinh_anh" class="form-control" type="text">
+                            <input id="hinh_anh" name="hinh_anh" class="form-control" type="text">
                             <input type="button" class="btn-info lfm" data-input="hinh_anh" data-preview="holder" value="Upload">
                         </div>
                         <img id="holder" style="margin-top:15px;max-height:100px;">
                     </div>
                     <div class="position-relative form-group">
                         <label>Danh Mục Cha</label>
-                        <select id="id_danh_muc_cha"class="form-control">
+                        <select id="id_danh_muc_cha" name="id_danh_muc_cha" class="form-control">
                             {{-- <option value="">Danh Mục Root</option>
                             @foreach ($danh_muc_cha as $key => $value)
                             <option value={{ $value->id }}>{{ $value->ten_danh_muc }}</option>
@@ -219,6 +219,9 @@
                     $("#id_danh_muc_cha").html(content_select);
                     $("#id_danh_muc_cha_edit").html(content_select);
                     $("#tableDanhMuc tbody").html(content_table);
+
+                    console.log(content_select);
+                    console.log(content_table);
                 },
             });
         }
@@ -242,7 +245,8 @@
                     if(res.trangThai) {
                         toastr.success('Đã đổi trạng thái thành công!');
                         // Tình trạng mới là true
-                        if(res.tinhTrangDanhMuc){
+                        // loadTable();
+                        if(res.tinhTrangDanhMuc == true){
                             self.html('Hiển Thị');
                             self.removeClass('btn-danger');
                             self.addClass('btn-primary');
@@ -365,8 +369,13 @@
                 success :    function(res) {
                     toastr.success("Đã thêm mới danh mục thành công!");
                     loadTable();
-                    $('#createDanhMuc').trigger("reset");
+                    // $('#createDanhMuc').trigger("reset");
                     $('#holder').attr('src', '');
+                    // $("#ten_danh_muc").val();
+                    $("#slug_danh_muc").val('');
+                    $("#hinh_anh").val('');
+                    $("#id_danh_muc_cha").val('');
+                    $("#is_open").val('');
                 },
                 error   :    function(res) {
                     var danh_sach_loi = res.responseJSON.errors;
