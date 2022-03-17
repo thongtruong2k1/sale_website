@@ -35,3 +35,6 @@ Route::group(['prefix' => '/admin'], function() {
         Route::post('/update-form', [\App\Http\Controllers\DanhMucSanPhamController::class, 'update_form']);
     });
 });
+
+Route::get('/agent/register', [\App\Http\Controllers\AgentController::class, 'register']);
+Route::post('/agent/register', [\App\Http\Controllers\AgentController::class, 'registerAction']);
