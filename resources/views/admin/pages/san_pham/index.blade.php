@@ -63,11 +63,11 @@
                     </div>
                     <div class="position-relative form-group">
                         <label>Mô Tả Ngắn</label>
-                        <input id="mo_ta_ngan" placeholder="with a placeholder" type="text" class="form-control">
+                        <textarea class="form-control" id="mo_ta_ngan" cols="30" rows="10" placeholder="Nhập vào mô tả ngắn"></textarea>
                     </div>
                     <div class="position-relative form-group">
                         <label>Mô Tả Chi Tiết</label>
-                        <input id="mo_ta_chi_tiet" placeholder="with a placeholder" type="text" class="form-control">
+                        <input name="mo_ta_chi_tiet" id="mo_ta_chi_tiet" placeholder="with a placeholder" type="text" class="form-control">
                     </div>
                     <div class="position-relative form-group">
                         <label>Danh Mục</label>
@@ -114,10 +114,19 @@
 </div>
 @endsection
 @section('js')
+<script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
 <script src="/vendor/laravel-filemanager/js/lfm.js"></script>
 <script>
     $('.lfm').filemanager('image');
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
+    CKEDITOR.replace('mo_ta_chi_tiet', options);
 </script>
+
 <script>
     $(document).ready(function(){
         $.ajaxSetup({
@@ -169,7 +178,7 @@
             var gia_khuyen_mai      = $("#gia_khuyen_mai").val();
             var anh_dai_dien        = $("#anh_dai_dien").val();
             var mo_ta_ngan          = $("#mo_ta_ngan").val();
-            var mo_ta_chi_tiet      = $("#mo_ta_chi_tiet").val();
+            var mo_ta_chi_tiet      = CKEDITOR.instances['mo_ta_chi_tiet'].getData();
             var id_danh_muc         = $("#id_danh_muc").val();
             var is_open             = $("#is_open").val();
 
@@ -184,6 +193,8 @@
                 'id_danh_muc'           :   id_danh_muc,
                 'is_open'               :   is_open,
             };
+
+            console.log(thongTinSanPhamCanTao);
 
             $.ajax({
                 url     :   '/admin/san-pham/tao-san-pham',

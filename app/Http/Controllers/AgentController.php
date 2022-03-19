@@ -8,6 +8,8 @@ use App\Http\Requests\AgentRegisterRequest;
 use Illuminate\Support\Str;
 use App\Mail\MailKichHoatDaiLy;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\AgentLoginRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AgentController extends Controller
 {
@@ -45,4 +47,43 @@ class AgentController extends Controller
             'Kích Hoạt Tài Khoản Đăng Ký'
         ));
     }
+
+    public function login()
+    {
+        return view('agent.login');
+    }
+
+    public function loginAction(AgentLoginRequest $request)
+    {
+        $data  = $request->all();
+        $check = Auth::guard('agent')->attempt($data);
+        if($check) {
+            // Đã login thành công!!!
+            $agent = Auth::guard('agent')->user();
+            if($agent->is_email) {
+                return response()->json(['status' => 2]);
+            } else {
+                //Chưa kích hoạt mail
+                Auth::guard('agent')->logout();
+                return response()->json(['status' => 1]);
+            }
+        } else {
+            //Login thất bại
+            return response()->json(['status' => 0]);
+        }
+    }
+
+    public function active($hash)
+    {
+        $agent = Agent::where('hash', $hash)->first();
+        if($agent->is_email) {
+            toastr()->warning('Tài khoản của bạn đã được kích hoạt trước đó!');
+        } else {
+            $agent->is_email = 1;
+            $agent->save();
+            toastr()->success('Tài khoản của bạn đã được kích hoạt!');
+        }
+        return redirect('/agent/login');
+    }
+
 }

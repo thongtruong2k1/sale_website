@@ -41,3 +41,6 @@ Route::group(['prefix' => '/admin'], function() {
 
 Route::get('/agent/register', [\App\Http\Controllers\AgentController::class, 'register']);
 Route::post('/agent/register', [\App\Http\Controllers\AgentController::class, 'registerAction']);
+Route::get('/agent/login', [\App\Http\Controllers\AgentController::class, 'login']);
+Route::post('/agent/login', [\App\Http\Controllers\AgentController::class, 'loginAction']);
+Route::get('/active/{hash}', [\App\Http\Controllers\AgentController::class, 'active']);
