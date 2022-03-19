@@ -39,6 +39,5 @@ Route::group(['prefix' => '/admin'], function() {
     });
 });
 
-Route::get('/form', [\App\Http\Controllers\TestController::class, 'form']);
-Route::get('/ajax', [\App\Http\Controllers\TestController::class, 'ajax']);
-
+Route::get('/agent/register', [\App\Http\Controllers\AgentController::class, 'register']);
+Route::post('/agent/register', [\App\Http\Controllers\AgentController::class, 'registerAction']);
