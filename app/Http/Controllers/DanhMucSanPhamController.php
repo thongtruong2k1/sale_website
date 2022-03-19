@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateDanhMucSanPhamRequest;
 use App\Http\Requests\UpdateDanhMucSanPhamRequest;
 use App\Models\DanhMucSanPham;
+use App\Models\SanPham;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,8 @@ class DanhMucSanPhamController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.danh_muc_san_pham.index');
+        $san_pham = SanPham::all();
+        return view('admin.pages.danh_muc_san_pham.index', compact('san_pham'));
     }
 
     public function getData()

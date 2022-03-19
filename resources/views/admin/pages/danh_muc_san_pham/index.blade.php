@@ -5,7 +5,7 @@
 </div>
 <div>Quản Lý Danh Mục
     <div class="page-title-subheading">
-        Thêm Mới Danh Sách Danh Mục và Quản Lý Các Loại Danh Mục
+        Thêm Mới Danh Sách Danh Mục và Quản Lý Các Loại Danh Mục.
     </div>
 </div>
 @endsection
