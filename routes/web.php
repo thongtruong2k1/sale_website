@@ -13,16 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.pages.danh_muc_san_pham.index');
-});
-
 Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/danh-muc-san-pham'], function() {
         Route::get('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index']);
-
         Route::post('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'store']);
-
         Route::get('/data', [\App\Http\Controllers\DanhMucSanPhamController::class, 'getData']);
 
         Route::get('/doi-trang-thai/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'doiTrangThai']);
@@ -33,6 +27,15 @@ Route::group(['prefix' => '/admin'], function() {
 
         Route::get('/edit-form/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'edit_form']);
         Route::post('/update-form', [\App\Http\Controllers\DanhMucSanPhamController::class, 'update_form']);
+    });
+
+    Route::group(['prefix' => '/san-pham'], function() {
+        Route::get('/index', [\App\Http\Controllers\SanPhamController::class, 'index']);
+        Route::post('/tao-san-pham', [\App\Http\Controllers\SanPhamController::class, 'HamTaoSanPhamDayNe']);
+
+        Route::get('/danh-sach-san-pham', [\App\Http\Controllers\SanPhamController::class, 'TraChoMotDoanJsonDanhSachSanPham']);
+        Route::get('/doi-trang-thai/{id}', [\App\Http\Controllers\SanPhamController::class, 'DoiTrangThaiSanPham']);
+        Route::get('/xoa-san-pham/{id}', [\App\Http\Controllers\SanPhamController::class, 'XoaSanPham']);
     });
 });
 
