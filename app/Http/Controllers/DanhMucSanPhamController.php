@@ -13,8 +13,7 @@ class DanhMucSanPhamController extends Controller
 {
     public function index()
     {
-        $san_pham = SanPham::all();
-        return view('admin.pages.danh_muc_san_pham.index', compact('san_pham'));
+        return view('admin.pages.danh_muc_san_pham.index');
     }
 
     public function index_vue()
