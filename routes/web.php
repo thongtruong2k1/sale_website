@@ -27,6 +27,8 @@ Route::group(['prefix' => '/admin'], function() {
 
         Route::get('/edit-form/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'edit_form']);
         Route::post('/update-form', [\App\Http\Controllers\DanhMucSanPhamController::class, 'update_form']);
+
+        Route::get('/index-vue', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index_vue']);
     });
 
     Route::group(['prefix' => '/san-pham'], function() {

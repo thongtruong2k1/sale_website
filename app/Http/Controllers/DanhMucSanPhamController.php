@@ -124,4 +124,9 @@ class DanhMucSanPhamController extends Controller
 
         return response()->json(['status'=> true]);
     }
+
+    public function index_vue()
+    {
+
+    }
 }
