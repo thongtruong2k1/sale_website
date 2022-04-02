@@ -17,6 +17,11 @@ class DanhMucSanPhamController extends Controller
         return view('admin.pages.danh_muc_san_pham.index', compact('san_pham'));
     }
 
+    public function index_vue()
+    {
+        return view('admin.pages.danh_muc_san_pham.index_vue');
+    }
+
     public function getData()
     {
         $danh_muc_cha = DanhMucSanPham::where('id_danh_muc_cha', 0)->get();
@@ -125,8 +130,5 @@ class DanhMucSanPhamController extends Controller
         return response()->json(['status'=> true]);
     }
 
-    public function index_vue()
-    {
 
-    }
 }
