@@ -18,7 +18,7 @@ class DanhMucSanPhamController extends Controller
 
     public function index_vue()
     {
-        return view('admin.pages.danh_muc_san_pham.index_vue');
+        return view('new_admin.pages.danh_muc_san_pham.index');
     }
 
     public function getData()
