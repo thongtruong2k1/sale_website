@@ -5,7 +5,7 @@
 </div>
 <div>Quản Lý Danh Mục
     <div class="page-title-subheading">
-        Thêm Mới Danh Sách Danh Mục và Quản Lý Các Loại Danh Mục
+        Thêm Mới Danh Sách Danh Mục và Quản Lý Các Loại Danh Mục.
     </div>
 </div>
 @endsection
@@ -15,17 +15,10 @@
         <div class="main-card mb-3 card">
             <div class="card-body">
                 <h5 class="card-title">Thêm Mới Danh Mục Sản Phẩm</h5>
-                @if($errors->any())
-                    @foreach ($errors->all() as $key => $value)
-                    <div class="alert alert-danger" role="alert">
-                        {{ $value }}
-                    </div>
-                    @endforeach
-                @endif
                 <form autocomplete="off" id="createDanhMuc">
                     <div class="position-relative form-group">
                         <label>Tên Danh Mục</label>
-                        <input id="ten_danh_muc" name="ten_danh_muc" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
+                        <input  name="ten_danh_muc" placeholder="Nhập vào tên danh mục" type="text" class="form-control">
                     </div>
                     <div class="position-relative form-group">
                         <label>Slug Danh Mục</label>

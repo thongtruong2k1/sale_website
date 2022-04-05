@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateDanhMucSanPhamRequest;
 use App\Http\Requests\UpdateDanhMucSanPhamRequest;
 use App\Models\DanhMucSanPham;
+use App\Models\SanPham;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,6 +14,11 @@ class DanhMucSanPhamController extends Controller
     public function index()
     {
         return view('admin.pages.danh_muc_san_pham.index');
+    }
+
+    public function index_vue()
+    {
+        return view('admin.pages.danh_muc_san_pham.index_vue');
     }
 
     public function getData()
@@ -122,4 +128,6 @@ class DanhMucSanPhamController extends Controller
 
         return response()->json(['status'=> true]);
     }
+
+
 }
