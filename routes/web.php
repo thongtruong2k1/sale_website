@@ -39,7 +39,11 @@ Route::group(['prefix' => '/admin'], function() {
 
         Route::get('/danh-sach-san-pham', [\App\Http\Controllers\SanPhamController::class, 'TraChoMotDoanJsonDanhSachSanPham']);
         Route::get('/doi-trang-thai/{id}', [\App\Http\Controllers\SanPhamController::class, 'DoiTrangThaiSanPham']);
+
         Route::get('/xoa-san-pham/{id}', [\App\Http\Controllers\SanPhamController::class, 'XoaSanPham']);
+
+        Route::get('/edit/{id}', [\App\Http\Controllers\SanPhamController::class, 'editSanPham']);
+        Route::post('/update', [\App\Http\Controllers\SanPhamController::class, 'updateSanPham']);
     });
 });
 
