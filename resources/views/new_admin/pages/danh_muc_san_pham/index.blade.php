@@ -238,7 +238,6 @@
             hinh_anh_edit           :   '',
             id_danh_muc_cha_edit    :   0,
             is_open_edit            :   1,
-
         },
 
         created(){

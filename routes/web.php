@@ -35,17 +35,27 @@ Route::group(['prefix' => '/admin'], function() {
         // Route::get('/index-vue', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index_vue']);
     });
 
+    // Route::group(['prefix' => '/san-pham'], function() {
+    //     Route::get('/index', [\App\Http\Controllers\SanPhamController::class, 'index']);
+    //     Route::post('/tao-san-pham', [\App\Http\Controllers\SanPhamController::class, 'HamTaoSanPhamDayNe']);
+
+    //     Route::get('/danh-sach-san-pham', [\App\Http\Controllers\SanPhamController::class, 'TraChoMotDoanJsonDanhSachSanPham']);
+    //     Route::get('/doi-trang-thai/{id}', [\App\Http\Controllers\SanPhamController::class, 'DoiTrangThaiSanPham']);
+
+    //     Route::get('/xoa-san-pham/{id}', [\App\Http\Controllers\SanPhamController::class, 'XoaSanPham']);
+
+    //     Route::get('/edit/{id}', [\App\Http\Controllers\SanPhamController::class, 'editSanPham']);
+    //     Route::post('/update', [\App\Http\Controllers\SanPhamController::class, 'updateSanPham']);
+    // });
+
     Route::group(['prefix' => '/san-pham'], function() {
-        Route::get('/index', [\App\Http\Controllers\SanPhamController::class, 'index']);
-        Route::post('/tao-san-pham', [\App\Http\Controllers\SanPhamController::class, 'HamTaoSanPhamDayNe']);
+        Route::get('/index', [\App\Http\Controllers\SanPhamVueController::class, 'index']);
 
-        Route::get('/danh-sach-san-pham', [\App\Http\Controllers\SanPhamController::class, 'TraChoMotDoanJsonDanhSachSanPham']);
-        Route::get('/doi-trang-thai/{id}', [\App\Http\Controllers\SanPhamController::class, 'DoiTrangThaiSanPham']);
-
-        Route::get('/xoa-san-pham/{id}', [\App\Http\Controllers\SanPhamController::class, 'XoaSanPham']);
-
-        Route::get('/edit/{id}', [\App\Http\Controllers\SanPhamController::class, 'editSanPham']);
-        Route::post('/update', [\App\Http\Controllers\SanPhamController::class, 'updateSanPham']);
+        Route::get('/loadData', [\App\Http\Controllers\SanPhamVueController::class, 'loadData']);
+        Route::post('/create', [\App\Http\Controllers\SanPhamVueController::class, 'store']);
+        Route::post('/update', [\App\Http\Controllers\SanPhamVueController::class, 'update']);
+        Route::get('/edit/{id}', [\App\Http\Controllers\SanPhamVueController::class, 'edit']);
+        Route::get('/delete/{id}', [\App\Http\Controllers\SanPhamVueController::class, 'delete']);
     });
 });
 
