@@ -107,25 +107,25 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered mb-0">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th>#</th>
                                             <th>Tên Danh Mục</th>
-                                            <th>Danh Muc Cha</th>
+                                            <th>Danh Mục Cha</th>
                                             <th>Tình Trạng</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr v-for="(value, key) in list_vue">
-                                            <th class="text-center">@{{ key + 1 }}</th>
-                                            <td>@{{ value.ten_danh_muc }}</td>
-                                            <td>@{{ value.ten_danh_muc_cha === null ? 'Root' : value.ten_danh_muc_cha }}</td>
-                                            <td>
+                                            <th class="text-center align-middle">@{{ key + 1 }}</th>
+                                            <td class="align-middle">@{{ value.ten_danh_muc }}</td>
+                                            <td class="text-center align-middle">@{{ value.ten_danh_muc_cha === null ? 'Root' : value.ten_danh_muc_cha }}</td>
+                                            <td class="text-center">
                                                 {{-- @{{ value.is_open == 1 ? 'Hiển Thị' : 'Tạm Tắt' }} --}}
                                                 <button class="btn btn-primary" v-on:click="doiTrangThai(value.id)"  v-if="value.is_open">Hiển Thị</button>
                                                 <button class="btn btn-danger" v-on:click="doiTrangThai(value.id)" v-else>Tạm Tắt</button>
                                             </td>
-                                            <td>
+                                            <td class="text-center">
                                                 <button class="btn btn-primary" data-toggle="modal" data-target="#editModal" v-on:click="editDanhMuc(value.id)">Edit</button>
                                                 <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" v-on:click="deleteDanhMuc(value.id)">Delete</button>
                                             </td>
@@ -172,7 +172,7 @@
                     <input type="text" v-model="idEdit" hidden>
                     <div class="position-relative form-group">
                         <label>Tên Danh Mục</label>
-                        <input placeholder="Nhập vào tên danh mục" v-on:keyup="toSlug(ten_danh_muc_edit)" v-model="ten_danh_muc_edit" type="text" class="form-control">
+                        <input placeholder="Nhập vào tên danh mục" v-on:keyup="toSlugEdit(ten_danh_muc_edit)" v-model="ten_danh_muc_edit" type="text" class="form-control">
                     </div>
                     <div class="position-relative form-group">
                         <label>Slug Danh Mục</label>
@@ -206,7 +206,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" v-on:click="acceptUpdate()">Cập Nhật Danh Mục</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" v-on:click="acceptUpdate()">Cập Nhật Danh Mục</button>
                 </div>
             </div>
         </div>
@@ -258,6 +258,18 @@
                 str = str.replace(/^-+|-+$/g, '');
 
                 this.slug_danh_muc = str;
+            },
+            toSlugEdit(str) {
+                str = str.toLowerCase();
+                str = str
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '');
+                str = str.replace(/[đĐ]/g, 'd');
+                str = str.replace(/([^0-9a-z-\s])/g, '');
+                str = str.replace(/(\s+)/g, '-');
+                str = str.replace(/-+/g, '-');
+                str = str.replace(/^-+|-+$/g, '');
+
                 this.slug_danh_muc_edit = str;
             },
 

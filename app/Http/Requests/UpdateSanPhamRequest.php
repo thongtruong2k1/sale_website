@@ -25,8 +25,8 @@ class UpdateSanPhamRequest extends FormRequest
     {
         return [
             'id'                =>  'required|exists:san_phams,id',
-            'ten_san_pham'      =>  'required|max:50|unique:san_phams,ten_san_pham'. $this->id,
-            'slug_san_pham'     =>  'required|max:50|unique:san_phams,ten_san_pham'. $this->id,
+            'ten_san_pham'      =>  'required|max:50|unique:san_phams,ten_san_pham,'. $this->id,
+            'slug_san_pham'     =>  'required|max:50|unique:san_phams,ten_san_pham,'. $this->id,
             'gia_ban'           =>  'nullable|numeric',
             'gia_khuyen_mai'    =>  'required|numeric|lt:gia_ban',
             'anh_dai_dien'      =>  'required',

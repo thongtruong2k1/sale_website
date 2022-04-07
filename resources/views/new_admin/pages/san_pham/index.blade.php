@@ -114,7 +114,7 @@
                 </div>
                 <div class="modal-footer">
                     <input type="reset" id="closeModal" class="btn btn-outline-secondary" data-dismiss="modal" value="close">
-                    <input type="submit" id="updateSanPham" class="btn btn-outline-primary" value="Chỉnh sửa">
+                    <input type="submit" id="updateSanPham" class="btn btn-outline-primary" data-dismiss="modal" value="Chỉnh sửa">
                 </div>
             </form>
         </div>
@@ -304,6 +304,12 @@
             $("#slug_san_pham").val(slugSanPham);
         });
 
+        $("#ten_san_pham_edit").keyup(function(){
+            var tenSanPham = $("#ten_san_pham_edit").val();
+            var slugSanPham = toSlug(tenSanPham);
+            $("#slug_san_pham_edit").val(slugSanPham);
+        });
+
         function layDuLieu() {
             $.ajax({
                 url     :   '/admin/san-pham/danh-sach-san-pham',
@@ -319,14 +325,14 @@
                         }
 
                         html += '<tr>';
-                        html += '<th scope="row">' + (key + 1) + '</th>';
-                        html += '<td>' + value.ten_san_pham + '</td>';
-                        html += '<td>' + value.slug_san_pham + '</td>';
-                        html += '<td>' + value.gia_ban + '</td>';
-                        html += '<td>' + value.gia_khuyen_mai + '</td>';
-                        html += '<td>' + doan_muon_hien_thi + '</td>';
-                        html += '<td>' + value.ten_danh_muc + '</td>';
-                        html += '<td class="text-nowrap">';
+                        html += '<th scope="row" class="text-center align-middle">' + (key + 1) + '</th>';
+                        html += '<td class="align-middle">' + value.ten_san_pham + '</td>';
+                        html += '<td class="align-middle">' + value.slug_san_pham + '</td>';
+                        html += '<td class="align-middle text-right">' + value.gia_ban + '</td>';
+                        html += '<td class="align-middle text-right">' + value.gia_khuyen_mai + '</td>';
+                        html += '<td class="text-center align-middle">' + doan_muon_hien_thi + '</td>';
+                        html += '<td class="align-middle">' + value.ten_danh_muc + '</td>';
+                        html += '<td class="text-nowrap text-center align-middle">';
                         html += '<button class="btn btn-danger nutDelete mr-1" data-quoclongdeptrai="' + value.id + '" data-toggle="modal" data-target="#exampleModal"> Xóa </button>';
                         html += '<button class="btn btn-success nutEdit" data-idedit="' + value.id + '" data-toggle="modal" data-target="#inlineForm"> Chỉnh sửa </button>';
                         html += '</td>';
@@ -401,6 +407,7 @@
                 type    :   'get',
                 success :   function(res) {
                     if(res.status) {
+                        toastr.success("Đã thay đổi trạng thái thành công!");
                         layDuLieu();
                     }
                 },
@@ -418,6 +425,7 @@
 				type    :   'get',
 				success :   function(res) {
 					if(res.status) {
+                        toastr.success("Đã xóa sản phẩm thành công!");
 						layDuLieu();
 					}
 				},
@@ -431,10 +439,12 @@
 
         $('body').on('click','.nutEdit',function(){
             var id = $(this).data('idedit');
+            // console.log(id);
             $.ajax({
                 url     :   '/admin/san-pham/edit/' + id,
                 type    :   'get',
                 success :   function(res) {
+                    console.log(res);
                     if(res.status) {
                         $("#ten_san_pham_edit").val(res.data.ten_san_pham);
                         $("#slug_san_pham_edit").val(res.data.slug_san_pham);
@@ -482,6 +492,7 @@
                 'is_open'           :   val_is_open,
                 'id'                :   val_id,
             };
+            console.log(payload);
 
             // Gửi payload lên trên back-end bằng con đường ajax
             $.ajax({
@@ -491,7 +502,6 @@
                 success :   function(res) {
                     if(res.status) {
                         toastr.success('Danh mục sản phẩm đã được cập nhật!');
-                        $('#closeModal').click();
                         layDuLieu();
                         $('#holder_edit').attr('src', '');
                     }
