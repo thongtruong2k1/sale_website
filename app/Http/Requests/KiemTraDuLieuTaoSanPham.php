@@ -27,7 +27,7 @@ class KiemTraDuLieuTaoSanPham extends FormRequest
             'ten_san_pham'         =>   'required|max:100|unique:san_phams,ten_san_pham',
             'slug_san_pham'        =>   'required|unique:san_phams,slug_san_pham',
             'gia_ban'              =>   'required|numeric',
-            'gia_khuyen_mai'       =>   'required|numeric',
+            'gia_khuyen_mai'       =>  'required|numeric|lt:gia_ban',
             'anh_dai_dien'         =>   'required',
             'mo_ta_ngan'           =>   'required',
             'mo_ta_chi_tiet'       =>   'required',
