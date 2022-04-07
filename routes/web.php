@@ -17,7 +17,7 @@ Route::get('/test', [\App\Http\Controllers\TestController::class, 'test']);
 
 Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/danh-muc-san-pham'], function() {
-        Route::get('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index']);
+        Route::get('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index_vue']);
         Route::post('/index', [\App\Http\Controllers\DanhMucSanPhamController::class, 'store']);
         Route::get('/data', [\App\Http\Controllers\DanhMucSanPhamController::class, 'getData']);
 
@@ -30,7 +30,7 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/edit-form/{id}', [\App\Http\Controllers\DanhMucSanPhamController::class, 'edit_form']);
         Route::post('/update-form', [\App\Http\Controllers\DanhMucSanPhamController::class, 'update_form']);
 
-        Route::get('/index-vue', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index_vue']);
+        // Route::get('/index-vue', [\App\Http\Controllers\DanhMucSanPhamController::class, 'index_vue']);
     });
 
     Route::group(['prefix' => '/san-pham'], function() {
