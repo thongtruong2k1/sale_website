@@ -51,6 +51,8 @@ Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/san-pham'], function() {
         Route::get('/index', [\App\Http\Controllers\SanPhamVueController::class, 'index']);
 
+        Route::get('/changeStatus/{id}', [\App\Http\Controllers\SanPhamVueController::class, 'changeStatus']);
+
         Route::get('/loadData', [\App\Http\Controllers\SanPhamVueController::class, 'loadData']);
         Route::post('/create', [\App\Http\Controllers\SanPhamVueController::class, 'store']);
         Route::post('/update', [\App\Http\Controllers\SanPhamVueController::class, 'update']);

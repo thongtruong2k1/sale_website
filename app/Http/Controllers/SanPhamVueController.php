@@ -51,7 +51,7 @@ class SanPhamVueController extends Controller
         if($san_pham) {
             return response()->json([
                 'status'  =>  true,
-                'data'    =>  $san_pham
+                'sanPham'    =>  $san_pham
             ]);
         } else {
             return response()->json([
@@ -69,6 +69,21 @@ class SanPhamVueController extends Controller
             return response()->json([
                 'status'  =>  false,
             ]);
+        }
+    }
+
+    public function changeStatus($id)
+    {
+        $san_pham = SanPham::find($id);
+        if($san_pham) {
+            // $san_pham->is_open = !$san_pham->is_open;
+            if($san_pham->is_open == 1) {
+                $san_pham->is_open = 0;
+            } else {
+                $san_pham->is_open = 1;
+            }
+            $san_pham->save();
+            return response()->json(['status' => true]);
         }
     }
 }
