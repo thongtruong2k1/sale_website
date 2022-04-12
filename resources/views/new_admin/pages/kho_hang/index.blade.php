@@ -20,7 +20,7 @@
             </div>
             <div class="card-content collapse show">
                 <div class="card-body">
-                    <input type="text" class="form-control" placeholder="Nhập sản phẩm cần tìm">
+                    <input v-model="inputSearch" v-on:blur="search()" type="text" class="form-control" placeholder="Nhập sản phẩm cần tìm">
                     <table class="table table-bordered mb-0 mt-1">
                         <thead>
                             <tr class="text-center">
@@ -102,6 +102,7 @@
         data:   {
             danhSachSanPham     :   [],
             danhSachKhoDangNhap :   [],
+            inputSearch         :   '',
         },
         created() {
             this.loadSanPham();
@@ -131,6 +132,16 @@
                         } else {
                             this.loadTableBenPhai();
                         }
+                    });
+            },
+            search() {
+                var payload = {
+                    'tenSanPham'    :   this.inputSearch,
+                };
+                axios
+                    .post('/admin/san-pham/search', payload)
+                    .then((res) => {
+                        this.danhSachSanPham    = res.data.dataProduct;
                     });
             },
         },

@@ -59,6 +59,7 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/edit/{id}', [\App\Http\Controllers\SanPhamVueController::class, 'edit']);
         Route::get('/delete/{id}', [\App\Http\Controllers\SanPhamVueController::class, 'delete']);
 
+        Route::post('/search', [\App\Http\Controllers\SanPhamVueController::class, 'search']);
     });
 
     Route::group(['prefix' => '/nhap-kho'], function() {
