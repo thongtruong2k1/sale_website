@@ -15,6 +15,7 @@
 @include('home_page.pages.compoment.you_may_like')
 
 @include('home_page.pages.compoment.sale')
+
 <div class="support-area bdr-top">
     <div class="container">
         <div class="d-flex flex-wrap text-center">

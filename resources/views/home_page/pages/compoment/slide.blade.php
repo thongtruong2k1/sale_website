@@ -5,8 +5,16 @@
             <div class="col-xl-9 col-lg-8 slider_box">
                 <div class="slider-wrapper theme-default">
                     <div id="slider" class="nivoSlider">
-                        <a href="shop.html"><img src="/assets_homepage/img/slider/2.jpg" data-thumb="/assets_homepage/img/slider/2.jpg" alt="" title="#htmlcaption" /></a>
-                        <a href="shop.html"><img src="/assets_homepage/img/slider/2.jpg" data-thumb="/assets_homepage/img/slider/2.jpg" alt="" title="#htmlcaption2" /></a>
+                        @for($i = 1; $i < 6; $i++)
+                            @php
+                                $name = 'slide_' . $i;
+                            @endphp
+                            @if(isset($config->$name) && Str::length($config->$name) > 0)
+                                <a href="/">
+                                    <img src="{{ $config->$name }}" data-thumb="{{ $config->$name }}">
+                                </a>
+                            @endif
+                        @endfor
                     </div>
                 </div>
             </div>

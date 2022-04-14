@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('home_page.pages.home_page');
-});
+
+Route::get('/', [\App\Http\Controllers\HomePageController::class, 'index']);
+
+
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'test']);
 
 Route::group(['prefix' => '/admin'], function() {
@@ -72,6 +73,11 @@ Route::group(['prefix' => '/admin'], function() {
         Route::post('/update', [\App\Http\Controllers\KhoHangController::class, 'update']);
 
         Route::get('/create', [\App\Http\Controllers\KhoHangController::class, 'create']);
+    });
+
+    Route::group(['prefix' => '/cau-hinh'], function() {
+        Route::get('/', [\App\Http\Controllers\ConfigController::class, 'index']);
+        Route::post('/', [\App\Http\Controllers\ConfigController::class, 'store']);
     });
 });
 
