@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('new_admin.master');
+    return view('home_page.pages.home_page');
 });
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'test']);
 
@@ -67,6 +67,11 @@ Route::group(['prefix' => '/admin'], function() {
 
         Route::get('/loadData', [\App\Http\Controllers\KhoHangController::class, 'loadData']);
         Route::get('/add/{id}', [\App\Http\Controllers\KhoHangController::class, 'store']);
+
+        Route::get('/remove/{id}', [\App\Http\Controllers\KhoHangController::class, 'destroy']);
+        Route::post('/update', [\App\Http\Controllers\KhoHangController::class, 'update']);
+
+        Route::get('/create', [\App\Http\Controllers\KhoHangController::class, 'create']);
     });
 });
 

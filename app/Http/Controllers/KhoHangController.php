@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\KhoHang;
 use App\Models\SanPham;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class KhoHangController extends Controller
 {
@@ -14,14 +15,31 @@ class KhoHangController extends Controller
         return view('new_admin.pages.kho_hang.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        // Bước 1: Lấy toàn bộ dữ liệu đang là kho đang nhập => type = 0
+        $data = KhoHang::where('type', 0)->get(); // trả về 1 array
+        $hash = Str::uuid();
+        foreach($data as $key => $value) {
+            // Cập nhật số lượng của sản phẩm
+            $sanPham = SanPham::find($value->id_san_pham);
+            if($sanPham) {
+                if($value->so_luong > 0 && $value->don_gia > 0) {
+                    $value->thanh_tien      = $value->so_luong * $value->don_gia;
+                    $value->type            = 1;
+                    $value->hash            = $hash;
+                    $value->ten_san_pham    = $sanPham->ten_san_pham;
+                    $value->save();
+
+                    $sanPham->so_luong = $sanPham->so_luong + $value->so_luong;
+                    $sanPham->save();
+                } else {
+                    $value->delete();
+                }
+            } else {
+                $value->delete();
+            }
+        }
     }
 
     public function loadData()
@@ -52,48 +70,42 @@ class KhoHangController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\KhoHang  $khoHang
-     * @return \Illuminate\Http\Response
-     */
     public function show(KhoHang $khoHang)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\KhoHang  $khoHang
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(KhoHang $khoHang)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\KhoHang  $khoHang
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, KhoHang $khoHang)
+    public function update(Request $request)
     {
-        //
+        // $request->id, $request->so_luong, $request->don_gia
+        $khoHang = KhoHang::where('id', $request->id)->where('type', 0)->first();
+
+        if($khoHang) {
+            $khoHang->so_luong = $request->so_luong;
+            $khoHang->don_gia  = $request->don_gia;
+            $khoHang->save();
+
+            return response()->json(['status' => true]);
+        } else {
+            return response()->json(['status' => false]);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\KhoHang  $khoHang
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(KhoHang $khoHang)
+    public function destroy($id)
     {
-        //
+        $khoHang = KhoHang::where('id', $id)->where('type', 0)->first();
+
+        if($khoHang) {
+            $khoHang->delete();
+            return response()->json(['status' => true]);
+        } else {
+            return response()->json(['status' => false]);
+        }
     }
 }
