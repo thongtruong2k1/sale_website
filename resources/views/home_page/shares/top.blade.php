@@ -28,12 +28,19 @@
                         </ul>
                         <!-- Dropdown End -->
                     </li>
-                    <li><a href="#">Tài Khoản Của Tôi<i class="lnr lnr-chevron-down"></i></a>
+                    <li>Tài Khoản Của Tôi<i class="lnr lnr-chevron-down"></i>
                         <!-- Dropdown Start -->
-                        <ul class="ht-dropdown">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                        </ul>
+                        @if ( Auth::guard('agent')->check())
+                            <ul class="ht-dropdown">
+                                <li><a href="/agent/logout">Logout</a></li>
+                            </ul>
+                        @else
+                            <ul class="ht-dropdown">
+                                <li><a href="/agent/login">Login</a></li>
+                                <li><a href="/agent/register">Register</a></li>
+                            </ul>
+                        @endif
+
                         <!-- Dropdown End -->
                     </li>
                 </ul>
@@ -148,11 +155,22 @@
                             </li>
                             <li><a href="#"><i class="lnr lnr-heart"></i><span class="my-cart"><span>Wish</span><span>list (0)</span></span></a>
                             </li>
-                            <li><a href="#"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Sign in</strong> Or</span><span> Join My Site</span></span></a>
-
-
-
-                            </li>
+                            @if (Auth::guard('agent')->check())
+                                <li><a href="#"><i class="lnr lnr-user"></i>
+                                        <span class="my-cart">
+                                            <span>
+                                                <strong>{{ Auth::guard('agent')->user()->ho_va_ten }}</strong>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </li>
+                            @else
+                                <li>
+                                    <a href="/agent/login"><i class="lnr lnr-user"></i>
+                                    <span class="my-cart align-middle">Sign In</span>
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </div>

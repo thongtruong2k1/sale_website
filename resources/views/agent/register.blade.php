@@ -21,8 +21,10 @@
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                                     <p class="text-center h1 fw-bold mb-2 mx-1 mx-md-4 mt-2">Sign up</p>
-
                                     <form class="mx-1 mx-md-4" autocomplete="off">
+                                        <div id="messeger">
+
+                                        </div>
                                         <div class="d-flex flex-row align-items-center mb-2">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
@@ -79,10 +81,8 @@
 
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
                                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
                                         class="img-fluid" alt="Sample image">
-
                                 </div>
                             </div>
                         </div>
@@ -123,7 +123,14 @@
                     type    :   'post',
                     data    :   payload,
                     success :   function(res) {
-
+                        $("#messeger").append('<div class="alert alert-success " role="alert"> Vui lòng kiểm tra Email để kích hoạt tài khoản</div>');
+                        if(res.status){
+                            console.log(res.status);
+                            toastr.success("Bạn đã đăng kí tài khoản thành công !!!");
+                            setTimeout(function(){
+                                $(location).attr('href','http://127.0.0.1:8000/agent/login');;
+                            }, 2000);
+                        }
                     },
                     error   :   function(res) {
                         var danh_sach_loi = res.responseJSON.errors;

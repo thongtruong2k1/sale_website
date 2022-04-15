@@ -46,6 +46,8 @@ class AgentController extends Controller
             $data['hash'],
             'Kích Hoạt Tài Khoản Đăng Ký'
         ));
+
+        return response()->json(['status' => true]);
     }
 
     public function login()
@@ -84,6 +86,12 @@ class AgentController extends Controller
             toastr()->success('Tài khoản của bạn đã được kích hoạt!');
         }
         return redirect('/agent/login');
+    }
+
+    public function logout()
+    {
+        Auth::guard("agent")->logout();
+        return redirect("/");
     }
 
 }
