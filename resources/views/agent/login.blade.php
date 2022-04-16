@@ -85,6 +85,9 @@
                     success :   function(res) {
                         if(res.status == 2) {
                             toastr.success('Bạn đã login thành công!');
+                            setTimeout(function(){
+                                $(location).attr('href','http://127.0.0.1:8000');;
+                            }, 2000);
                         } else if(res.status == 1) {
                             toastr.warning("Bạn cần phải kích hoạt email");
                         } else {
