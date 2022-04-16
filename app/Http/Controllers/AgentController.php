@@ -75,6 +75,27 @@ class AgentController extends Controller
         }
     }
 
+    // public function login_addtocart(AgentLoginRequest $request)
+    // {
+    //     $data  = $request->all();
+    //     $check = Auth::guard('agent')->attempt($data);
+    //     if($check) {
+    //         // Đã login thành công!!!
+    //         $agent = Auth::guard('agent')->user();
+    //         if($agent->is_email) {
+    //             toastr()->success("Bạn đã đăng nhập thành công !!!");
+    //             return redirect()->back();
+    //         } else {
+    //             //Chưa kích hoạt mail
+    //             Auth::guard('agent')->logout();
+    //             toastr()->success("Bạn đã đăng nhập thành công !!!");
+    //         }
+    //     } else {
+    //         //Login thất bại
+    //         return response()->json(['status' => 0]);
+    //     }
+    // }
+
     public function active($hash)
     {
         $agent = Agent::where('hash', $hash)->first();

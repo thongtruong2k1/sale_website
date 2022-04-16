@@ -81,9 +81,13 @@ Route::group(['prefix' => '/admin'], function() {
     });
 });
 
+Route::group(['prefix' => '/agent'], function() {
+    Route::get('/product', [\App\Http\Controllers\SanPhamController::class, 'viewProduct']);
+});
 Route::get('/agent/register', [\App\Http\Controllers\AgentController::class, 'register']);
 Route::post('/agent/register', [\App\Http\Controllers\AgentController::class, 'registerAction']);
 Route::get('/agent/login', [\App\Http\Controllers\AgentController::class, 'login']);
+Route::get('/agent/login-addtocart', [\App\Http\Controllers\AgentController::class, 'login_addtocart']);
 Route::get('/agent/logout', [\App\Http\Controllers\AgentController::class, 'logout']);
 Route::post('/agent/login', [\App\Http\Controllers\AgentController::class, 'loginAction']);
 Route::get('/active/{hash}', [\App\Http\Controllers\AgentController::class, 'active']);
