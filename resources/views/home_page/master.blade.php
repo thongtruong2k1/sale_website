@@ -3,6 +3,11 @@
 
 <head>
     @include('home_page.shares.header')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @css_toastr
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    @toastr_css
 </head>
 <body>
     <div class="wrapper">
@@ -116,6 +121,55 @@
     </div>
 
     @include('home_page.shares.bottom')
+    @jquery
+    @toastr_js
+    @toastr_render
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(e) {
+              $.ajaxSetup({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  }
+              });
+
+              $("#login").click(function(e) {
+                  e.preventDefault();
+                  var email = $("#email").val();
+                  var password = $("#password").val();
+                  var payload = {
+                      'email'     : email,
+                      'password'  : password,
+                  };
+                  $.ajax({
+                      url     :   '/agent/login',
+                      data    :   payload,
+                      type    :   'post',
+                      success :   function(res) {
+                          if(res.status == 2) {
+                              toastr.success('Bạn đã login thành công!');
+                              setTimeout(function(){
+                                  $(location).attr('href','http://127.0.0.1:8000');;
+                              }, 2000);
+                          } else if(res.status == 1) {
+                              toastr.warning("Bạn cần phải kích hoạt email");
+                          } else {
+                              toastr.error("Đăng nhập thất bại!");
+                          }
+                      },
+                      error   :   function(res) {
+                          var danh_sach_loi = res.responseJSON.errors;
+                          $.each(danh_sach_loi, function(key, value){
+                              toastr.error(value[0]);
+                          });
+                      }
+                  });
+              });
+          });
+    </script>
 </body>
 
 </html>

@@ -25,7 +25,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 33990000,
                 'gia_khuyen_mai' => 31690000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/274168/iphone-13-mini-xanh-xa-2.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/236780/Slider/vi-vn-iphone-13-mini-slider-tong-quan.jpg',
                 'mo_ta_ngan' => 'Đa dạng sự lựa chọn với 6 màu thanh lịch
                                 Bắt trọng khung ảnh Camera kép siêu rộng
                                 An toàn khi sử dụng khả năng chống nước
@@ -43,7 +43,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 16990000,
                 'gia_khuyen_mai' => 14490000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-tim-1-1-1-org.jpg',
+                'anh_dai_dien' => 'https://lapvui.com/wp-content/uploads/2021/02/iphone-11-8.jpg',
                 'mo_ta_ngan' => 'Nâng cao chất lượng ảnh với hệ thống camera được nâng cấp.
                                 Chơi game 3D mượt mà với chip A15 Bionic, GPU 5 lõi mới.
                                 Trải nghiệm quét 120 Hz, độ sáng 1200 nits.
@@ -61,7 +61,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 30490000,
                 'gia_khuyen_mai' => 26990000,
-                'anh_dai_dien' => 'https://cdn01.dienmaycholon.vn/filewebdmclnew/DMCL21/Picture//Apro/Apro_product_26537/iphone-12-pro-2_multi_2_975_450.png.webp',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/213032/Slider/iphone-12-pro-thumbv-780x433-1.jpg',
                 'mo_ta_ngan' => 'Nâng cao chất lượng ảnh với hệ thống camera được nâng cấp.
                                 Chơi game 3D mượt mà với chip A15 Bionic, GPU 5 lõi mới.
                                 Trải nghiệm quét 120 Hz, độ sáng 1200 nits.
@@ -137,7 +137,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 70190000,
                 'gia_khuyen_mai' => 46690000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/44/274379/asus-rog-zephyrus-gaming-g14-ga401qh-r7-k2091w-2.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/44/268666/Slider/vi-vn-asus-zenbook-ux425e-i5-ki749w-4.jpg',
                 'mo_ta_ngan' => 'Laptop Asus Rog Zephyrus Gaming G14 GA401QH (K2091W)
                                 là sự lựa chọn hoàn hảo với trang bị chip AMD hiệu
                                 năng ấn tượng cùng card màn hình rời NVIDIA GTX sẵn
@@ -261,7 +261,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 8190000,
                 'gia_khuyen_mai' => 5690000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/54/242034/tai-nghe-bluetooth-true-wireless-galaxy-buds-pro-bac-1-org.jpg',
+                'anh_dai_dien' => 'https://cdn1.hoanghamobile.com/tin-tuc/wp-content/uploads/2020/12/Samsung-Galaxy-Buds-Pro.jpg',
                 'mo_ta_ngan' => 'Tai nghe Bluetooth True Wireless Samsung Buds Pro sở hữu vẻ ngoài đẹp mắt thời
                                 thượng với hai màu đen và trắng. Thiết kế mới trên hình dạng tai nghe cổ điển, có khả năng làm
                                 giảm bớt sự khó chịu khi sử dụng tai nghe trong nhiều giờ và tai nghe cũng nằm chắc chắn phía
@@ -281,7 +281,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 3190000,
                 'gia_khuyen_mai' => 2590000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/54/252124/true-wireless-samsung-galaxy-buds-live-r180-3.jpg',
+                'anh_dai_dien' => 'https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/705/10046865-tai-nghe-samsung-galaxy-buds-live-r180-dong-1.jpg',
                 'mo_ta_ngan' => 'Samsung Galaxy Buds Live R180 Gold có một tone màu đồng khá sang trọng, quyến rũ ở
                                  cả trong và ngoài, rất phù hợp cho phái nữ. Hộp sạc của tai nghe Samsung Galaxy
                                  Buds Live dạng mở nắp vỏ sò, trọng lượng 42.2 gram nhỏ gọn, người dùng có thể
@@ -298,7 +298,7 @@ class SanPhamSeeder extends Seeder
                 'slug_san_pham' => 'tai-nghe-bluetooth-samsung-level-u-pro' ,
                 'so_luong' => 1,
                 'gia_ban' => 1819000,
-                'gia_khuyen_mai' => 9690000,
+                'gia_khuyen_mai' => 969000,
                 'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/54/113117/Slider/tai-nghe-bluetooth-samsung-level-u-pro-bn920c-300920-0520030.jpg',
                 'mo_ta_ngan' => 'Tai nghe Samsung Level U Pro BN920C được thiết kế sang trọng
                                  Toàn thân tai nghe được gia công bằng vỏ nhựa và cao su,
@@ -315,7 +315,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 890000,
                 'gia_khuyen_mai' => 690000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/54/113118/tai-nghe-nhet-tai-samsung-eg920b-2.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/54/264068/nhet-tai-samsung-ia500-den-051221-060553.jpg',
                 'mo_ta_ngan' => 'Tai nghe nhét trong Samsung EG920B có đi nút đệm tai nghe dạng móc
                                  Giúp người đeo khi vận động mạnh sẽ không bị rớt ra',
                 'mo_ta_chi_tiet' => 'Tai nghe nhét trong Samsung EG920B có đi nút đệm tai nghe dạng móc
@@ -329,7 +329,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 990000,
                 'gia_khuyen_mai' => 690000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/54/264068/nhet-tai-samsung-ia500-den-2-1.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/54/264068/nhet-tai-samsung-ia500-den-051221-064339.jpg',
                 'mo_ta_ngan' => 'Dây tai nghe EP Samsung IA500 có độ dài là 1.25 m rất thuận tiện khi dùng, bạn có
                                  thể để điện thoại đã cắm dây tai nghe vào túi hoặc balo mà vẫn sử dụng được,
                                  không cần phải cầm trên tay để sử dụng. ',
@@ -345,7 +345,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 20000000,
                 'gia_khuyen_mai' => 19000000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/190323/iphone-xs-trang-600x600-200x200.jpg',
+                'anh_dai_dien' => 'https://c.allegroimg.com/original/12fa8e/e083af6744a48da8b484a1d6f59c',
                 'mo_ta_ngan' => 'Đến hẹn lại lên, năm nay Apple giới thiệu tới người dùng thế hệ tiếp theo với 3 phiên bản, trong đó có cái tên iPhone Xs 64 GB với những nâng cấp mạnh mẽ về phần cứng đến hiệu năng, màn hình cùng hàng loạt các trang bị cao cấp khác.',
                 'mo_ta_chi_tiet' => 'Đến hẹn lại lên, năm nay Apple giới thiệu tới người dùng thế hệ tiếp theo với 3 phiên bản, trong đó có cái tên iPhone Xs 64 GB với những nâng cấp mạnh mẽ về phần cứng đến hiệu năng, màn hình cùng hàng loạt các trang bị cao cấp khác.',
                 'id_danh_muc' => 6,
@@ -357,7 +357,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 35000000,
                 'gia_khuyen_mai' => 33000000,
-                'anh_dai_dien' => 'https://image-us.24h.com.vn/upload/1-2022/images/2022-03-06/Lo-anh-iPhone-13-Pro-mau-tim-dep-hut-mat-se-trinh-lang-ngay-tuan-sau-iphone-13-pro-max-1-1646533704-123-width660height495.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/230529/Slider/iphone-13-pro-max637691517843007201.jpg',
                 'mo_ta_ngan' => 'iPhone 13 Pro Max xứng đáng là một chiếc iPhone lớn nhất, mạnh mẽ nhất và có thời lượng pin dài nhất từ trước đến nay sẽ cho bạn trải nghiệm tuyệt vời, từ những tác vụ bình thường cho đến các ứng dụng chuyên nghiệp.',
                 'mo_ta_chi_tiet' => 'iPhone 13 Pro Max xứng đáng là một chiếc iPhone lớn nhất, mạnh mẽ nhất và có thời lượng pin dài nhất từ trước đến nay sẽ cho bạn trải nghiệm tuyệt vời, từ những tác vụ bình thường cho đến các ứng dụng chuyên nghiệp.',
                 'id_danh_muc' => 6,
@@ -369,7 +369,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 41990000,
                 'gia_khuyen_mai' => 40990000,
-                'anh_dai_dien' => 'https://images.samsung.com/my/smartphones/galaxy-z-fold3-5g/buy/zfold3_carousel_mainsinglekv_mo.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/226935/Slider/samsung-galaxy-z-fold-3-slider-tong-quan-1020x570.jpg',
                 'mo_ta_ngan' => 'Yên tâm tận hưởng sử dụng khả năng kháng nước  IPX8.
                                 Chiến game đầy mạnh mẽ RAM 12 GB, Snapdragon 888.
                                 Thoả sức mọi sáng tạo hỗ trợ kết nối với bút S Pen*
@@ -387,7 +387,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 41990000,
                 'gia_khuyen_mai' => 40990000,
-                'anh_dai_dien' => 'https://ict-imgs.vgcloud.vn/2022/01/03/18/samsung-gioi-thieu-galaxy-a03-camera-48mp-gia-tu-2-99-trieu-dong.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/251856/Slider/samsung-galaxy-A03-3GB-tongquan-slider-1020x570.jpg',
                 'mo_ta_ngan' => 'Yên tâm tận hưởng sử dụng khả năng kháng nước  IPX8.
                                 Chiến game đầy mạnh mẽ RAM 12 GB, Snapdragon 888.
                                 Thoả sức mọi sáng tạo hỗ trợ kết nối với bút S Pen*
@@ -405,7 +405,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 30000000,
                 'gia_khuyen_mai' => 29000000,
-                'anh_dai_dien' => 'https://images.samsung.com/is/image/samsung/assets/ca/smartphones/galaxy-z-fold2/002_Z-Fold2-MysticBlack-dynamic-GalleryImage-MO-img80.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/226935/Slider/samsung-galaxy-z-fold-3-slider-tong-quan-1020x570.jpg',
                 'mo_ta_ngan' => 'Màn hình liền mạch, mượt mà dynamic Amoled 2x 120 Hz.
                                 Nhiếp ảnh chuyên nghiệp 3 camera 12 MP, hỗ trợ chụp đêm.
                                 Mở khoá nhanh với 2 bảo mật vân tay cạnh viền và khuôn mặt.
@@ -423,7 +423,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 23000000,
                 'gia_khuyen_mai' => 22000000,
-                'anh_dai_dien' => 'https://images.samsung.com/levant/smartphones/galaxy-s22-ultra/buy/S22_Ultra_ProductKV_Black_MO.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/235838/Slider/samsung-galaxys22ultra5Gthumbvideo-1020x570.jpg',
                 'mo_ta_ngan' => 'Samsung Galaxy S22 ra mắt với diện mạo vô cùng tinh tế và trẻ trung, mang trong mình thiết kế phẳng theo xu hướng thịnh hành, màn hình 120 Hz mượt mà, cụm camera AI 50 MP và bộ xử lý đến từ Qualcomm.',
                 'mo_ta_chi_tiet' => 'Samsung Galaxy S22 ra mắt với diện mạo vô cùng tinh tế và trẻ trung, mang trong mình thiết kế phẳng theo xu hướng thịnh hành, màn hình 120 Hz mượt mà, cụm camera AI 50 MP và bộ xử lý đến từ Qualcomm.',
                 'id_danh_muc' => 7,
@@ -435,7 +435,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 1,
                 'gia_ban' => 23000000,
                 'gia_khuyen_mai' => 16000000,
-                'anh_dai_dien' => 'https://images.samsung.com/vn/smartphones/galaxy-note20/images/galaxy-note20_highlights_kv_video_end.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/42/218355/Slider/vi-vn-samsung-galaxy-note-20-thietke.jpg',
                 'mo_ta_ngan' => 'Tháng 8/2020, Galaxy Note 20 chính thức được lên kệ, với thiết kế camera trước nốt ruồi quen thuộc, cụm camera hình chữ nhật mới lạ cùng với vi xử lý Exynos 990 cao cấp của chính Samsung chắc hẳn sẽ mang lại một trải nghiệm thú vị cùng hiệu năng mạnh mẽ.',
                 'mo_ta_chi_tiet' => 'Tháng 8/2020, Galaxy Note 20 chính thức được lên kệ, với thiết kế camera trước nốt ruồi quen thuộc, cụm camera hình chữ nhật mới lạ cùng với vi xử lý Exynos 990 cao cấp của chính Samsung chắc hẳn sẽ mang lại một trải nghiệm thú vị cùng hiệu năng mạnh mẽ.',
                 'id_danh_muc' => 7,
@@ -447,7 +447,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 10,
                 'gia_ban' => 7000000,
                 'gia_khuyen_mai' => 5990000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/274192/xiaomi-watch-s1-nau-thumb-mau-600x600.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/274192/Slider/vi-vn-xiaomi-watch-s1-02.jpg',
                 'mo_ta_ngan' => 'Màn hình: AMOLED, 1.43 inch, 46.5 mm, Tương thích: Android 6.0 trở lên, iOS 10 trở lên, Chế độ luyện tập, Theo dõi chu kì kinh nguyệt, Theo dõi giấc ngủ',
                 'mo_ta_chi_tiet' => 'Màn hình:AMOLED1.43 inch, Thời lượng pin: Khoảng 12 ngày, Kết nối với hệ điều hành: Android 6.0 trở lêniOS 10 trở lên, Mặt: Kính Sapphire46.5 mm, Tính năng cho sức khỏe: Chế độ luyện tậpTheo dõi chu kì kinh nguyệtTheo dõi giấc ngủTheo dõi mức độ stress, Theo dõi nhịp thởTheo dõi nhịp tim 24hĐo nồng độ oxy (SpO2)',
                 'id_danh_muc' => 12,
@@ -459,7 +459,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 10,
                 'gia_ban' => 1290000,
                 'gia_khuyen_mai' => 949000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/236733/mi-band-6-thumb-1-1-600x600.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/236733/Slider/vi-vn-mi-band-6-9.jpg',
                 'mo_ta_ngan' => 'Màn hình: AMOLED, 1.56 inch, 47.4 mm, Tương thích: Android 5.0 trở lên, iOS 10 trở lên, Chế độ luyện tập, Theo dõi giấc ngủ, Theo dõi mức độ stress',
                 'mo_ta_chi_tiet' => 'Màn hình: AMOLED1.56 inch, Thời lượng pin: Khoảng 15 ngày, Kết nối với hệ điều hành: Android 5.0 trở lêniOS 10 trở lên, Mặt: Kính cường lực47.4 mm, Dây: 22 cm, Tính năng cho sức khỏe: Chế độ luyện tậpTheo dõi giấc ngủTheo dõi mức độ stressTính lượng calories tiêu thụĐo nhịp timĐo nồng độ oxy (SpO2)Đếm số bước chân, Tiện ích: Báo thứcDự báo thời tiếtRung thông báoThay mặt đồng hồTìm điện thoạiĐiều khiển chơi nhạcĐiều khiển chụp ảnh',
                 'id_danh_muc' => 12,
@@ -471,7 +471,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 10,
                 'gia_ban' => 1490000,
                 'gia_khuyen_mai' => 1290000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/262620/redmi-watch-2-lite-600x600.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/262620/Slider/vi-vn-redmi-watch-2-lite-2.jpg',
                 'mo_ta_ngan' => 'Màn hình: TFT, 1.55 inch, 41.2 mm, Tương thích: Android 6.0 trở lên, iOS 10 trở lên, Chế độ luyện tập, Theo dõi chu kì kinh nguyệt, Theo dõi giấc ngủ',
                 'mo_ta_chi_tiet' => 'Màn hình: TFT1.55 inch, Thời lượng pin: Khoảng 10 ngày (sử dụng trong điều kiện tiêu chuẩn), Kết nối với hệ điều hành: Android 6.0 trở lêniOS 10 trở lên, Mặt: Kính cường lực41.2 mm, Tính năng cho sức khỏe: Chế độ luyện tậpTheo dõi chu kì kinh nguyệtTheo dõi giấc ngủTheo dõi mức độ stressTheo dõi nhịp thởTheo dõi nhịp tim 24hĐo nhịp timĐo nồng độ oxy (SpO2)',
                 'id_danh_muc' => 12,
@@ -483,7 +483,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 10,
                 'gia_ban' => 5490000,
                 'gia_khuyen_mai' => 4490000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/274193/xiaomi-watch-s1-active-den-thumb-mau-600x600.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/274193/Slider/vi-vn-xiaomi-watch-s1-active-2.jpg',
                 'mo_ta_ngan' => 'Màn hình: AMOLED, 1.43 inch, 47 mm, Tương thích: Android 6.0 trở lên, iOS 10 trở lên, Chế độ luyện tập, Theo dõi chu kì kinh nguyệt, Theo dõi giấc ngủ',
                 'mo_ta_chi_tiet' => 'Màn hình: AMOLED1.43 inch, Thời lượng pin: Khoảng 12 ngày, Kết nối với hệ điều hành: Android 6.0 trở lêniOS 10 trở lên, Mặt: Kính cường lực Gorilla Glass 347 mm, Tính năng cho sức khỏe: Chế độ luyện tậpTheo dõi chu kì kinh nguyệtTheo dõi giấc ngủTheo dõi mức độ stressTheo dõi nhịp thởTheo dõi nhịp tim 24hĐo nồng độ oxy (SpO2)',
                 'id_danh_muc' => 12,
@@ -495,7 +495,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 10,
                 'gia_ban' => 3490000,
                 'gia_khuyen_mai' => 2390000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/232899/mi-watch-den-thumb-600x600.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/232899/Slider/vi-vn-mi-watch-3.jpg',
                 'mo_ta_ngan' => 'Màn hình: AMOLED, 1.39 inch, 46 mm, Tương thích: Android 5.0 trở lên, iOS 11 trở lên, Chế độ luyện tập, Theo dõi giấc ngủ, Tính lượng calories tiêu thụ',
                 'mo_ta_chi_tiet' => 'Màn hình: AMOLED1.39 inch, Thời lượng pin: Khoảng 16 ngàyKhoảng 50 giờ cho chế độ thể thao và GPS, Kết nối với hệ điều hành: Android 5.0 trở lêniOS 11 trở lên, Mặt: Kính cường lực Gorilla Glass 346 mm, Tính năng cho sức khỏe: Chế độ luyện tậpTheo dõi giấc ngủTính lượng calories tiêu thụTự động phát hiện chế độ tập luyệnĐo nhịp timĐo nồng độ oxy (SpO2)Đếm số bước chân',
                 'id_danh_muc' => 12,
@@ -508,7 +508,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 10,
                 'gia_ban' => 7390000,
                 'gia_khuyen_mai' => 7390000,
-                'anh_dai_dien' => "https://cdn.tgdd.vn/Products/Images/7077/234918/se-40mm-vien-nhom-day-cao-su-vang-01.jpg",
+                'anh_dai_dien' => "https://cdn.tgdd.vn/Products/Images/7077/234918/Slider/vi-vn-se-40mm-vien-nhom-day-cao-su-hong-slider-fix.jpg",
                 'mo_ta_ngan' => "Thiết kế sang trọng, hiện đại, mang nét đặc trưng của Apple",
                 'mo_ta_chi_tiet' => "Thiết kế sang trọng, hiện đại, mang nét đặc trưng của Apple
                                         Apple Watch SE 40mm viền nhôm dây cao su hồng có khung viền chắc chắn, thiết kế bo tròn 4 góc giúp thao tác vuốt chạm thoải mái hơn. Mặt kính cường lực Ion-X strengthened glass với kích thước 1.57 inch, hiển thị rõ ràng. Khung viền nhôm chắc chắn cùng dây đeo cao su có độ đàn hồi cao, êm ái, tạo cảm giác thoải mái khi đeo.
@@ -599,7 +599,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 10,
                 'gia_ban' => 8990000,
                 'gia_khuyen_mai' => 8490000,
-                'anh_dai_dien' => "https://cdn.tgdd.vn/Products/Images/7077/234910/s6-lte-40mm-vien-nhom-day-cao-su-do-1-org.jpg",
+                'anh_dai_dien' => "https://cdn.tgdd.vn/Products/Images/7077/234910/Slider/noibac-780x433-2.jpg",
                 'mo_ta_ngan' => "Kiểu dáng thời thượng đi cùng sắc hồng nữ tính, trẻ trung",
                 'mo_ta_chi_tiet' => 'Kiểu dáng thời thượng đi cùng sắc hồng nữ tính, trẻ trung
                                         Apple Watch S6 LTE 40mm viền nhôm dây cao su hồng được trang bị khung viền nhôm và mặt kính Ion-X strengthened glass bền bỉ và cứng cáp, chịu lực tốt, cho bạn thoải mái vận động, không ngại những va đập thường ngày. Dây đeo cao su không thấm nước, êm nhẹ, cho bạn cảm giác dễ chịu suốt ngày dài.
@@ -697,7 +697,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 10,
                 'gia_ban' => 14990000,
                 'gia_khuyen_mai' => 12990000,
-                'anh_dai_dien' => "https://cdn.tgdd.vn/Products/Images/7077/250639/apple-watch-s7-lte-41mm-do-1-2.jpg",
+                'anh_dai_dien' => "https://cdn.tgdd.vn/Products/Images/7077/250639/Slider/vi-vn-apple-watch-s7-lte-41mm-thumbvideo.jpg",
                 'mo_ta_ngan' => "Thiết kế hiện đại và sang trọng",
                 'mo_ta_chi_tiet' => "Apple Watch S7 LTE 41 mm viền nhôm dây cao su có thiết kế được nâng cấp hơn so với phiên bản tiền nhiệm. Sở hữu vẻ ngoài sang trọng và hiện đại, Apple Watch S7 được thiết kế các góc bo tròn mềm mại với mặt đồng hồ được vác cong tạo cảm giác liền mạch hơn với khung viền. Phần khung viền được thiết kế mỏng hơn 40% và làm từ vật liệu nhôm tái chế 100% thân thiện với môi trường. Dây đeo cao su có độ đàn hồi tốt, thoải mái khi đeo và chống thấm mồ hôi hiệu quả.
 
@@ -785,7 +785,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 5,
                 'gia_ban' => 20990000,
                 'gia_khuyen_mai' => 19990000,
-                'anh_dai_dien' => "Thiết kế thời thượng, sang trọng cùng bo cong quen thuộc của Apple",
+                'anh_dai_dien' => "https://cdn.tgdd.vn/Products/Images/7077/250651/Slider/vi-vn-apple-watch-s7-lte-41mm-day-thep-1.jpg",
                 'mo_ta_ngan' => "Thiết kế thời thượng, sang trọng cùng bo cong quen thuộc của Apple",
                 'mo_ta_chi_tiet' => "Thiết kế thời thượng, sang trọng cùng bo cong quen thuộc của Apple
                                 Apple Watch S7 LTE 41 mm được trang bị khung viền thép không gỉ cứng cáp, trang nhã cùng phần thiết kế bo cong mềm mại quen thuộc của nhà Apple, bên cạnh đó bề mặt đồng hồ có kích thước 1.61 inch (diện tích màn hình tăng 20% so với phiên bản cũ) được bảo vệ bởi lớp kính Sapphire cao cấp. Phần viền của đồng hồ được làm trau chuốt hơn với độ dày chỉ 1.7 mm, tạo cảm giác tràn viền nhiều hơn (phần viền mỏng hơn 60% so với Apple Watch S6).
@@ -874,7 +874,7 @@ class SanPhamSeeder extends Seeder
                 'so_luong' => 20,
                 'gia_ban' => 18990000,
                 'gia_khuyen_mai' => 16490000,
-                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/239477/1-org.jpg',
+                'anh_dai_dien' => 'https://cdn.tgdd.vn/Products/Images/7077/239477/Slider/vi-vn-s6-lte-44mm-vien-thep-day-cao-su-xanh-duong-1.jpg',
                 'mo_ta_ngan' => "Thiết kế năng động, khỏe khoắn",
                 'mo_ta_chi_tiet' => "Apple Watch S6 LTE 44mm viền thép dây cao su xanh dương mang kiểu dáng sang trọng, màu sắc hiện đại, trẻ trung. Nó sở hữu màn hình OLED 1.78 inch cho khả năng hiển thị hình ảnh rực rỡ, sắc nét. Mặt đồng hồ được bảo vệ bởi lớp kính cường lực Sapphire có độ cứng cao, chống trầy xước hiệu quả. Dây đeo silicone có độ đàn hồi tốt, không thấm nước, cho cảm giác êm nhẹ suốt ngày dài.
 
