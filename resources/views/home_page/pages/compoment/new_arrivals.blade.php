@@ -7,27 +7,11 @@
                </div>
                 <!-- Nav tabs -->
                 <ul class="nav tabs-area" role="tablist">
+                    @foreach ($menuCha as $key => $value)
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#fshion">Fashion</a>
+                        <a class="nav-link {{ $key == 0 ? 'active' : '' }}" data-toggle="tab" href="#{{$value->id}}">{{ $value->ten_danh_muc }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#beauty">Beauty</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#electronics">Sport/Outdoor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#kids">Living</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#beauty">Food</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#kids">Baby/Kids</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#electronics">Electronics </a>
-                    </li>
+                    @endforeach
                 </ul>
 
             </div>
@@ -313,7 +297,7 @@
                     <!-- Arrivals Product Activation End Here -->
                 </div>
                 <!-- #fshion End Here -->
-                <div id="kids" class="tab-pane fade show active">
+                <div id="1" class="tab-pane fade show active">
                     <!-- Arrivals Product Activation Start Here -->
                     <div class="electronics-pro-active owl-carousel">
                         @for ($i = 1; $i < 7; $i++)

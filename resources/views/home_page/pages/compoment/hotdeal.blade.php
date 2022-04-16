@@ -15,7 +15,6 @@
                         <img class="primary-img" src="{{ $value->anh_dai_dien }} " class="h-75">
                         <img class="secondary-img" src="{{ $value->anh_dai_dien }}" class="h-75">
                     </a>
-                    <div class="countdown" data-countdown="2020/03/01"></div>
                     <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
                 </div>
                 <!-- Product Image End -->
