@@ -16,137 +16,7 @@
     <div class="container">
         <!-- Row End -->
         <div class="row">
-            <!-- Sidebar Shopping Option Start -->
-            <div class="col-lg-3 order-2 order-lg-1">
-                <div class="sidebar">
-                    <!-- Sidebar Electronics Categorie Start -->
-                    <div class="electronics mb-40">
-                        <h3 class="sidebar-title">Electronics</h3>
-                        <div id="shop-cate-toggle" class="category-menu sidebar-menu sidbar-style">
-                            <ul>
-                                <li class="has-sub"><a href="#">Camera</a>
-                                    <ul class="category-sub">
-                                        <li><a href="shop.html">Cords and Cables</a></li>
-                                        <li><a href="shop.html">gps accessories</a></li>
-                                        <li><a href="shop.html">Microphones</a></li>
-                                        <li><a href="shop.html">Wireless Transmitters</a></li>
-                                    </ul>
-                                    <!-- category submenu end-->
-                                </li>
-                                <li class="has-sub"><a href="#">gamepad</a>
-                                    <ul class="category-sub">
-                                        <li><a href="shop.html">cube lifestyle hd</a></li>
-                                        <li><a href="shop.html">gopro hero4</a></li>
-                                        <li><a href="shop.html">bhandycam cx405ags</a></li>
-                                        <li><a href="shop.html">vixia hf r600</a></li>
-                                    </ul>
-                                    <!-- category submenu end-->
-                                </li>
-                                <li class="has-sub"><a href="#">Digital Cameras</a>
-                                    <ul class="category-sub">
-                                        <li><a href="shop.html">Gold eye</a></li>
-                                        <li><a href="shop.html">Questek</a></li>
-                                        <li><a href="shop.html">Snm</a></li>
-                                        <li><a href="shop.html">vantech</a></li>
-                                    </ul>
-                                    <!-- category submenu end-->
-                                </li>
-                                <li class="has-sub"><a href="#">Virtual Reality</a>
-                                    <ul class="category-sub">
-                                        <li><a href="shop.html">Samsung</a></li>
-                                        <li><a href="shop.html">Toshiba</a></li>
-                                        <li><a href="shop.html">Transcend</a></li>
-                                        <li><a href="shop.html">Sandisk</a></li>
-                                    </ul>
-                                    <!-- category submenu end-->
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- category-menu-end -->
-                    </div>
-                    <!-- Sidebar Electronics Categorie End -->
-                    <!-- Price Filter Options Start -->
-                    <div class="search-filter mb-40">
-                        <h3 class="sidebar-title">filter by price</h3>
-                        <form action="#" class="sidbar-style">
-                            <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"><div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 85%;"></div><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 85%;"></span></div>
-                            <input type="text" id="amount" class="amount-range" readonly="">
-                        </form>
-                    </div>
-                    <!-- Price Filter Options End -->
-                    <!-- Sidebar Categorie Start -->
-                    <div class="sidebar-categorie mb-40">
-                        <h3 class="sidebar-title">categories</h3>
-                        <ul class="sidbar-style">
-                            <li class="form-check">
-                                <input class="form-check-input" value="#" id="camera" type="checkbox">
-                                <label class="form-check-label" for="camera">Cameras (8)</label>
-                            </li>
-                            <li class="form-check">
-                                <input class="form-check-input" value="#" id="GamePad" type="checkbox">
-                                <label class="form-check-label" for="GamePad">GamePad (8)</label>
-                            </li>
-                            <li class="form-check">
-                                <input class="form-check-input" value="#" id="Digital" type="checkbox">
-                                <label class="form-check-label" for="Digital">Digital Cameras (8)</label>
-                            </li>
-                            <li class="form-check">
-                                <input class="form-check-input" value="#" id="Virtual" type="checkbox">
-                                <label class="form-check-label" for="Virtual"> Virtual Reality (8) </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Sidebar Categorie Start -->
-                    <!-- Product Size Start -->
-                    <div class="size mb-40">
-                        <h3 class="sidebar-title">size</h3>
-                        <ul class="size-list sidbar-style">
-                            <li class="form-check">
-                                <input class="form-check-input" value="" id="small" type="checkbox">
-                                <label class="form-check-label" for="small">S (6)</label>
-                            </li>
-                            <li class="form-check">
-                                <input class="form-check-input" value="" id="medium" type="checkbox">
-                                <label class="form-check-label" for="medium">M (9)</label>
-                            </li>
-                            <li class="form-check">
-                                <input class="form-check-input" value="" id="large" type="checkbox">
-                                <label class="form-check-label" for="large">L (8)</label>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Product Size End -->
-                    <!-- Product Color Start -->
-                    <div class="color mb-40">
-                        <h3 class="sidebar-title">color</h3>
-                        <ul class="color-option sidbar-style">
-                            <li>
-                                <span class="white"></span>
-                                <a href="#">white (4)</a>
-                            </li>
-                            <li>
-                                <span class="orange"></span>
-                                <a href="#">Orange (2)</a>
-                            </li>
-                            <li>
-                                <span class="blue"></span>
-                                <a href="#">Blue (6)</a>
-                            </li>
-                            <li>
-                                <span class="yellow"></span>
-                                <a href="#">Yellow (8)</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Product Color End -->
-                    <!-- Product Top Start -->
-                    @include('home_page.pages.compoment_san_pham.top_new')
-                    <!-- Product Top End -->
-                </div>
-            </div>
-            <!-- Sidebar Shopping Option End -->
-            <!-- Product Categorie List Start -->
-            <div class="col-lg-9 order-1 order-lg-2">
+            <div class="col-lg-12 order-1 order-lg-2">
                 <!-- Grid & List View Start -->
                 <div class="grid-list-top border-default universal-padding d-md-flex justify-content-md-between align-items-center mb-30">
                     <div class="grid-list-view  mb-sm-15">
@@ -191,15 +61,15 @@
                         @include('home_page.pages.compoment_san_pham.list_san_pham')
                         <!-- #grid view End -->
                         <div id="list-view" class="tab-pane fade">
-                            <!-- Single Product Start -->
+                            @foreach ($sanPham as $key => $value)
                             <div class="single-product">
                                 <div class="row">
                                     <!-- Product Image Start -->
                                     <div class="col-lg-4 col-md-5 col-sm-12">
                                         <div class="pro-img">
                                             <a href="product.html">
-                                                <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                                <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
+                                                <img class="primary-img" src="{{ $value->anh_dai_dien }}" alt="single-product">
+                                                <img class="secondary-img" src="{{ $value->anh_dai_dien }}" alt="single-product">
                                             </a>
                                             <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="" data-original-title="Quick View"><i class="lnr lnr-magnifier"></i></a>
                                              <span class="sticker-new">new</span>
@@ -209,7 +79,7 @@
                                     <!-- Product Content Start -->
                                     <div class="col-lg-8 col-md-7 col-sm-12">
                                         <div class="pro-content hot-product2">
-                                            <h4><a href="product.html">Accessorize with a straw hat</a></h4>
+                                            <h4><a href="product.html">{{ $value->ten_san_pham }}</a></h4>
                                             <p><span class="price">$15.19</span></p>
                                             <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!Faded short sleeves t-shirt with high neckline. Soft and stretchy material.</p>
                                             <div class="pro-actions">
@@ -226,148 +96,8 @@
                                     <!-- Product Content End -->
                                 </div>
                             </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="row">
-                                    <!-- Product Image Start -->
-                                    <div class="col-lg-4 col-md-5 col-sm-12">
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                                <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                            </a>
-                                            <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="" data-original-title="Quick View"><i class="lnr lnr-magnifier"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- Product Image End -->
-                                    <!-- Product Content Start -->
-                                    <div class="col-lg-8 col-md-7 col-sm-12">
-                                        <div class="pro-content hot-product2">
-                                            <h4><a href="product.html">Tretchy Material Comfortable</a></h4>
-                                            <p><span class="price">$199.19</span><del class="prev-price">$205.50</del></p>
-                                            <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!Faded short sleeves t-shirt with high neckline. Soft and stretchy material.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-primary">
-                                                    <a href="cart.html" title="" data-original-title="Add to Cart"> + Add To Cart</a>
-                                                </div>
-                                                <div class="actions-secondary">
-                                                    <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
-                                                    <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Product Content End -->
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="row">
-                                    <!-- Product Image Start -->
-                                    <div class="col-lg-4 col-md-5 col-sm-12">
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                                <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                            </a>
-                                            <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="" data-original-title="Quick View"><i class="lnr lnr-magnifier"></i></a>
-                                            <span class="sticker-new">new</span>
-                                        </div>
-                                    </div>
-                                    <!-- Product Image End -->
-                                    <!-- Product Content Start -->
-                                    <div class="col-lg-8 col-md-7 col-sm-12">
-                                        <div class="pro-content hot-product2">
-                                            <h4><a href="product.html">Neckline Short Sleeves  Stretchy</a></h4>
-                                            <p><span class="price">$58.19</span></p>
-                                            <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!Faded short sleeves t-shirt with high neckline. Soft and stretchy material.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-primary">
-                                                    <a href="cart.html" title="" data-original-title="Add to Cart"> + Add To Cart</a>
-                                                </div>
-                                                <div class="actions-secondary">
-                                                    <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
-                                                    <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Product Content End -->
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="row">
-                                    <!-- Product Image Start -->
-                                    <div class="col-lg-4 col-md-5 col-sm-12">
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                                <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                            </a>
-                                            <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="" data-original-title="Quick View"><i class="lnr lnr-magnifier"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- Product Image End -->
-                                    <!-- Product Content Start -->
-                                    <div class="col-lg-8 col-md-7 col-sm-12">
-                                        <div class="pro-content hot-product2">
-                                            <h4><a href="product.html">Accessorize with a straw hat</a></h4>
-                                            <p><span class="price">$152.19</span><del class="prev-price">$160.50</del></p>
-                                            <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!Faded short sleeves t-shirt with high neckline. Soft and stretchy material.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-primary">
-                                                    <a href="cart.html" title="" data-original-title="Add to Cart"> + Add To Cart</a>
-                                                </div>
-                                                <div class="actions-secondary">
-                                                    <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
-                                                    <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Product Content End -->
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
-                            <!-- Single Product Start -->
-                            <div class="single-product">
-                                <div class="row">
-                                    <!-- Product Image Start -->
-                                    <div class="col-lg-4 col-md-5 col-sm-12">
-                                        <div class="pro-img">
-                                            <a href="product.html">
-                                                <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                                <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                                            </a>
-                                            <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="" data-original-title="Quick View"><i class="lnr lnr-magnifier"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- Product Image End -->
-                                    <!-- Product Content Start -->
-                                    <div class="col-lg-8 col-md-7 col-sm-12">
-                                        <div class="pro-content hot-product2">
-                                            <h4><a href="product.html">Faded Short Sleeves T-shirt</a></h4>
-                                            <p><span class="price">$15.19</span><del class="prev-price">$16.50</del></p>
-                                            <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!Faded short sleeves t-shirt with high neckline. Soft and stretchy material.</p>
-                                            <div class="pro-actions">
-                                                <div class="actions-primary">
-                                                    <a href="cart.html" title="" data-original-title="Add to Cart"> + Add To Cart</a>
-                                                </div>
-                                                <div class="actions-secondary">
-                                                    <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
-                                                    <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Product Content End -->
-                                </div>
-                            </div>
-                            <!-- Single Product End -->
+                            @endforeach
+
                         </div>
                         <!-- #list view End -->
                         <div class="pro-pagination">

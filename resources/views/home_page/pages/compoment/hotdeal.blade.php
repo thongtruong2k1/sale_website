@@ -11,7 +11,7 @@
             <div class="single-product">
                 <!-- Product Image Start -->
                 <div class="pro-img" class="h-100">
-                    <a href="product.html">
+                    <a href="/san-pham/{{$value->slug_san_pham}}-post{{ $value->id }}">
                         <img class="primary-img" src="{{ $value->anh_dai_dien }} " class="h-75">
                         <img class="secondary-img" src="{{ $value->anh_dai_dien }}" class="h-75">
                     </a>
@@ -21,7 +21,7 @@
                 <!-- Product Content Start -->
                 <div class="pro-content">
                     <div class="pro-info">
-                        <h4><a href="product.html">{{ $value->ten_san_pham }}</a></h4>
+                        <h4><a href="/san-pham/{{$value->slug_san_pham}}-post{{ $value->id }}">{{ $value->ten_san_pham }}</a></h4>
                         <p><span class="price">{{ number_format($value->gia_khuyen_mai, 0) }}</span><del class="prev-price">{{ number_format($value->gia_ban, 0) }}</del></p>
                         <div class="label-product l_sale">{{ number_format(($value->gia_ban - $value->gia_khuyen_mai) / $value->gia_ban * 100, 0 )}}<span class="symbol-percent">%</span></div>
                     </div>

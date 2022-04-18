@@ -24,26 +24,26 @@
                     <!-- Thumbnail Large Image start -->
                     <div class="tab-content">
                         <div id="thumb1" class="tab-pane fade show active">
-                            <a data-fancybox="images" href="/assets_homepage/img/products/43.jpg"><img src="/assets_homepage/img/products/43.jpg" alt="product-view"></a>
+                            <a data-fancybox="images" href="{{ $sanPham->anh_dai_dien }}"><img src="{{ $sanPham->anh_dai_dien }}" alt="product-view"></a>
                         </div>
                         <div id="thumb2" class="tab-pane fade">
-                            <a data-fancybox="images" href="/assets_homepage/img/products/43.jpg"><img src="/assets_homepage/img/products/43.jpg" alt="product-view"></a>
+                            <a data-fancybox="images" href="{{ $sanPham->anh_dai_dien }}"><img src="{{ $sanPham->anh_dai_dien }}" alt="product-view"></a>
                         </div>
                         <div id="thumb3" class="tab-pane fade">
-                            <a data-fancybox="images" href="/assets_homepage/img/products/43.jpg"><img src="/assets_homepage/img/products/43.jpg" alt="product-view"></a>
+                            <a data-fancybox="images" href="{{ $sanPham->anh_dai_dien }}"><img src="{{ $sanPham->anh_dai_dien }}" alt="product-view"></a>
                         </div>
                         <div id="thumb4" class="tab-pane fade">
-                            <a data-fancybox="images" href="/assets_homepage//assets_homepage/img/products/43.jpg"><img src="/assets_homepage//assets_homepage/img/products/43.jpg" alt="product-view"></a>
+                            <a data-fancybox="images" href="/assets_homepage/{{ $sanPham->anh_dai_dien }}"><img src="/assets_homepage/{{ $sanPham->anh_dai_dien }}" alt="product-view"></a>
                         </div>
                         <div id="thumb5" class="tab-pane fade">
-                            <a data-fancybox="images" href="/assets_homepage//assets_homepage/img/products/43.jpg"><img src="/assets_homepage//assets_homepage/img/products/43.jpg" alt="product-view"></a>
+                            <a data-fancybox="images" href="/assets_homepage/{{ $sanPham->anh_dai_dien }}"><img src="/assets_homepage/{{ $sanPham->anh_dai_dien }}" alt="product-view"></a>
                         </div>
                     </div>
                     <!-- Thumbnail Large Image End -->
                     <!-- Thumbnail Image End -->
                     <div class="product-thumbnail mt-15">
                         <div class="thumb-menu owl-carousel nav tabs-area owl-loaded owl-drag" role="tablist">
-                        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 780px;"><div class="owl-item active" style="width: 140.833px; margin-right: 15px;"><a class="active" data-toggle="tab" href="#thumb1"><img src="/assets_homepage/img/products/43.jpg" alt="product-thumbnail"></a></div><div class="owl-item active" style="width: 140.833px; margin-right: 15px;"><a data-toggle="tab" href="#thumb2"><img src="/assets_homepage/img/products/43.jpg" alt="product-thumbnail"></a></div><div class="owl-item active" style="width: 140.833px; margin-right: 15px;"><a data-toggle="tab" href="#thumb3"><img src="/assets_homepage/img/products/43.jpg" alt="product-thumbnail"></a></div><div class="owl-item active" style="width: 140.833px; margin-right: 15px;"><a data-toggle="tab" href="#thumb4"><img src="/assets_homepage//assets_homepage/img/products/43.jpg" alt="product-thumbnail"></a></div><div class="owl-item" style="width: 140.833px; margin-right: 15px;"><a data-toggle="tab" href="#thumb5"><img src="/assets_homepage//assets_homepage/img/products/43.jpg" alt="product-thumbnail"></a></div></div></div><div class="owl-nav"><div class="owl-prev disabled"><i class="lnr lnr-arrow-left"></i></div><div class="owl-next"><i class="lnr lnr-arrow-right"></i></div></div><div class="owl-dots disabled"></div></div>
+                        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 780px;"><div class="owl-item active" style="width: 140.833px; margin-right: 15px;"><a class="active" data-toggle="tab" href="#thumb1"><img src="{{ $sanPham->anh_dai_dien }}" alt="product-thumbnail"></a></div><div class="owl-item active" style="width: 140.833px; margin-right: 15px;"><a data-toggle="tab" href="#thumb2"><img src="{{ $sanPham->anh_dai_dien }}" alt="product-thumbnail"></a></div><div class="owl-item active" style="width: 140.833px; margin-right: 15px;"><a data-toggle="tab" href="#thumb3"><img src="{{ $sanPham->anh_dai_dien }}" alt="product-thumbnail"></a></div><div class="owl-item active" style="width: 140.833px; margin-right: 15px;"><a data-toggle="tab" href="#thumb4"><img src="/assets_homepage/{{ $sanPham->anh_dai_dien }}" alt="product-thumbnail"></a></div><div class="owl-item" style="width: 140.833px; margin-right: 15px;"><a data-toggle="tab" href="#thumb5"><img src="/assets_homepage/{{ $sanPham->anh_dai_dien }}" alt="product-thumbnail"></a></div></div></div><div class="owl-nav"><div class="owl-prev disabled"><i class="lnr lnr-arrow-left"></i></div><div class="owl-next"><i class="lnr lnr-arrow-right"></i></div></div><div class="owl-dots disabled"></div></div>
                     </div>
                     <!-- Thumbnail image end -->
                 </div>
@@ -51,7 +51,7 @@
                 <!-- Thumbnail Description Start -->
                 <div class="col-lg-7">
                     <div class="thubnail-desc fix">
-                        <h3 class="product-header">Faded Short Sleeves T-shirt</h3>
+                        <h3 class="product-header">{{ $sanPham->ten_san_pham }}</h3>
                         <div class="rating-summary fix mtb-10">
                             <div class="rating">
                                 <i class="fa fa-star"></i>
@@ -135,7 +135,9 @@
                 <!-- Product Thumbnail Tab Content Start -->
                 <div class="tab-content thumb-content border-default">
                     <div id="dtail" class="tab-pane fade show active">
-                        <p>Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
+                        <p>
+                            {{ $sanPham->mo_ta_chi_tiet }}
+                        </p>
                     </div>
                     <div id="review" class="tab-pane fade">
                         <!-- Reviews Start -->
@@ -262,8 +264,8 @@
                 <!-- Product Image Start -->
                 <div class="pro-img">
                     <a href="product.html">
-                        <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                        <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
+                        <img class="primary-img" src="{{ $sanPham->anh_dai_dien }}" alt="single-product">
+                        <img class="secondary-img" src="{{ $sanPham->anh_dai_dien }}" alt="single-product">
                     </a>
                     <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
                 </div>
@@ -293,8 +295,8 @@
                 <!-- Product Image Start -->
                 <div class="pro-img">
                     <a href="product.html">
-                        <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                        <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
+                        <img class="primary-img" src="{{ $sanPham->anh_dai_dien }}" alt="single-product">
+                        <img class="secondary-img" src="{{ $sanPham->anh_dai_dien }}" alt="single-product">
                     </a>
                     <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
                 </div>
@@ -324,8 +326,8 @@
                 <!-- Product Image Start -->
                 <div class="pro-img">
                     <a href="product.html">
-                        <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                        <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
+                        <img class="primary-img" src="{{ $sanPham->anh_dai_dien }}" alt="single-product">
+                        <img class="secondary-img" src="{{ $sanPham->anh_dai_dien }}" alt="single-product">
                     </a>
                     <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
                 </div>
@@ -355,8 +357,8 @@
                 <!-- Product Image Start -->
                 <div class="pro-img">
                     <a href="product.html">
-                        <img class="primary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
-                        <img class="secondary-img" src="/assets_homepage/img/products/43.jpg" alt="single-product">
+                        <img class="primary-img" src="{{ $sanPham->anh_dai_dien }}" alt="single-product">
+                        <img class="secondary-img" src="{{ $sanPham->anh_dai_dien }}" alt="single-product">
                     </a>
                     <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
                 </div>
