@@ -28,7 +28,7 @@
                     <div class="pro-actions">
                         @if (Auth::guard('agent')->check())
                             <div class="actions-primary">
-                                <a href="#" title="Add to Cart" > + Add To Cart</a>
+                                <a title="Add to Cart" class="addToCart" data-id="{{ $value->id }}"> + Add To Cart</a>
                             </div>
                         @else
                             <div class="actions-primary">

@@ -5,7 +5,7 @@
     @include('admin.shares.head')
 </head>
 <body>
-    <div id="app" class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         @include('admin.shares.top')
         <div class="app-main">
             <div class="app-sidebar sidebar-shadow">
@@ -56,5 +56,6 @@
     </div>
     @include('admin.shares.bot')
     @yield('js')
+
 </body>
 </html>

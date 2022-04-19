@@ -17,6 +17,12 @@ Route::get('/', [\App\Http\Controllers\HomePageController::class, 'index']);
 
 Route::get('/san-pham/{id}', [\App\Http\Controllers\HomePageController::class, 'viewSanPham']);
 Route::get('/danh-muc/{id}', [\App\Http\Controllers\HomePageController::class, 'viewDanhMuc']);
+Route::get('/cart', [\App\Http\Controllers\ChiTietDonHangController::class, 'index']);
+Route::get('/cart/data', [\App\Http\Controllers\ChiTietDonHangController::class, 'dataCart']);
+Route::post('/add-to-cart-update', [\App\Http\Controllers\ChiTietDonHangController::class, 'addToCartUpdate']);
+Route::post('/remove-cart', [\App\Http\Controllers\ChiTietDonHangController::class, 'removeCart']);
+
+Route::post('/add-to-cart', [\App\Http\Controllers\ChiTietDonHangController::class, 'addToCart']);
 
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'test']);
 
