@@ -12,7 +12,7 @@
     </div>
     <!-- Container End -->
 </div>
-<div class="main-shop-page pt-100 pb-100 ptb-sm-60">
+<div class="main-shop-page pb-100 ptb-sm-60">
     <div class="container">
         <!-- Row End -->
         <div class="row">
@@ -67,7 +67,7 @@
                                     <!-- Product Image Start -->
                                     <div class="col-lg-4 col-md-5 col-sm-12">
                                         <div class="pro-img">
-                                            <a href="product.html">
+                                            <a href="/san-pham/{{$value->slug_san_pham}}-post{{ $value->id }}">{{ $value->ten_san_pham }}">
                                                 <img class="primary-img" src="{{ $value->anh_dai_dien }}" alt="single-product">
                                                 <img class="secondary-img" src="{{ $value->anh_dai_dien }}" alt="single-product">
                                             </a>
@@ -79,13 +79,19 @@
                                     <!-- Product Content Start -->
                                     <div class="col-lg-8 col-md-7 col-sm-12">
                                         <div class="pro-content hot-product2">
-                                            <h4><a href="product.html">{{ $value->ten_san_pham }}</a></h4>
-                                            <p><span class="price">$15.19</span></p>
-                                            <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!Faded short sleeves t-shirt with high neckline. Soft and stretchy material.</p>
+                                            <h4><a href="/san-pham/{{$value->slug_san_pham}}-post{{ $value->id }}">{{ $value->ten_san_pham }}">{{ $value->ten_san_pham }}</a></h4>
+                                            <p><span class="price">{{ number_format($value->gia_khuyen_mai, 0) }} VNĐ</span></p>
+                                            <p>{!! strlen($value->mo_ta_ngan) > 200 ? substr($value->mo_ta_ngan, 0, 150) . "..." : $value->mo_ta_ngan !!}</p>
                                             <div class="pro-actions">
-                                                <div class="actions-primary">
-                                                    <a href="cart.html" title="" data-original-title="Add to Cart"> + Add To Cart</a>
-                                                </div>
+                                                @if (Auth::guard('agent')->check())
+                                                    <div class="actions-primary">
+                                                        <a href="#" title="Add to Cart" > + Add To Cart</a>
+                                                    </div>
+                                                @else
+                                                    <div class="actions-primary">
+                                                        <a href="cart.html" title="Add to Cart" data-toggle="modal" data-target="#myModal" > + Add To Cart</a>
+                                                    </div>
+                                                @endif
                                                 <div class="actions-secondary">
                                                     <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
                                                     <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
@@ -122,4 +128,5 @@
     </div>
     <!-- Container End -->
 </div>
+
 @endsection
