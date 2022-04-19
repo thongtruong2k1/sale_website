@@ -4,7 +4,6 @@
 <head>
     @include('home_page.shares.header')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    @css_toastr
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
     @toastr_css
@@ -94,9 +93,6 @@
                                                     <input class="quantity mr-40" type="number" min="1" value="1">
                                                 </form>
                                                 <a class="add-cart" href="cart.html">add to cart</a>
-                                            </div>
-                                            <div class="pro-ref mt-15">
-                                                <p><span class="in-stock"><i class="ion-checkmark-round"></i> IN STOCK</span></p>
                                             </div>
                                         </div>
                                     </div>

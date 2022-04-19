@@ -32,8 +32,10 @@ class HomePageController extends Controller
 
         $sanPham = SanPham::find($id);
 
+        $allSanPham = SanPham::where('id_danh_muc', $sanPham->id_danh_muc)->get();
+
         if($sanPham) {
-            return view('home_page.pages.detail_san_pham', compact('sanPham'));
+            return view('home_page.pages.detail_san_pham', compact('sanPham', 'allSanPham'));
         } else {
             return redirect('/');
         }
@@ -41,6 +43,12 @@ class HomePageController extends Controller
 
     public function viewDanhMuc($id)
     {
+
+        while(strpos($id, 'post')) {
+            $viTri = strpos($id, 'post');
+            $id = Str::substr($id, $viTri + 4);
+        }
+
         $danhMuc = DanhMucSanPham::find($id);
         if($danhMuc) {
             // Nếu là danh mục con
