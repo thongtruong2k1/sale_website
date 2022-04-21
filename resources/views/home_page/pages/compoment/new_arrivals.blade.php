@@ -26,7 +26,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="/san-pham/{{$value_sp->slug_san_pham}}-post{{ $value_sp->id }}">
                                         <img class="primary-img" src="{{ $value_sp->anh_dai_dien }}" alt="single-product">
                                         <img class="secondary-img" src="{{ $value_sp->anh_dai_dien }}" alt="single-product">
                                     </a>
@@ -36,13 +36,13 @@
                                 <!-- Product Content Start -->
                                 <div class="pro-content">
                                     <div class="pro-info">
-                                        <h4><a href="product.html">{{ $value_sp->ten_san_pham }}</a></h4>
+                                        <h4><a href="/san-pham/{{$value_sp->slug_san_pham}}-post{{ $value_sp->id }}">{{ $value_sp->ten_san_pham }}</a></h4>
                                         <p><span class="price">{{ number_format($value_sp->gia_khuyen_mai) }}</span><del class="prev-price">{{ number_format($value_sp->gia_ban) }}</del></p>
                                         <div class="label-product l_sale">{{ number_format( ($value_sp->gia_ban - $value_sp->gia_khuyen_mai) / $value_sp->gia_ban * 100, 2) }}<span class="symbol-percent">%</span></div>
                                     </div>
                                     <div class="pro-actions">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                            <a title="Add to Cart" class="addToCart" data-id="{{ $value_sp->id }}" > + Add To Cart</a>
                                         </div>
                                         <div class="actions-secondary">
                                             <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
