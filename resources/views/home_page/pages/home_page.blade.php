@@ -12,7 +12,7 @@
 
 @include('home_page.pages.compoment.best_seller')
 
-@include('home_page.pages.compoment.you_may_like')
+{{-- @include('home_page.pages.compoment.you_may_like') --}}
 
 @include('home_page.pages.compoment.sale')
 
