@@ -59,13 +59,13 @@
                                         <tr class="order-total">
                                             <th>Total</th>
                                             <td>
-                                                <strong><span class="amount">$215.00</span></strong>
+                                                <td><span class="amount">@{{ formatNumber(total()) }}</span></td>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <div class="wc-proceed-to-checkout">
-                                    <a href="#">Proceed to Checkout</a>
+                                    <button style="font-size: 20px; background-color:orange" click="createBill()" class="btn"><b>Proceed To Checkout<b></button>
                                 </div>
                             </div>
                         </div>
@@ -120,6 +120,26 @@
                             this.loadCart();
                         });
                 },
+                total() {
+                    var tong_tien = 0;
+                    this.listCart.forEach((value, key) => {
+                        tong_tien += value.don_gia * value.so_luong;
+                    });
+                    return tong_tien;
+                },
+                createBill() {
+                    axios
+                        .get('/create-bill')
+                        .then((res) => {
+                            if(res.data.status == 1) {
+                                toastr.success('Đã tạo bill thành công!');
+                            } else if(res.data.status == 0) {
+                                toastr.error('Thao tác không thành công!');
+                            } else {
+                                toastr.warning("Bill rỗng!");
+                            }
+                        })
+                }
             },
         });
     </script>

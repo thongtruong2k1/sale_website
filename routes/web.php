@@ -24,6 +24,10 @@ Route::post('/remove-cart', [\App\Http\Controllers\ChiTietDonHangController::cla
 
 Route::post('/add-to-cart', [\App\Http\Controllers\ChiTietDonHangController::class, 'addToCart']);
 
+Route::get('/create-bill', [\App\Http\Controllers\DonHangController::class, 'store']);
+
+
+
 Route::get('/test', [\App\Http\Controllers\TestController::class, 'test']);
 
 Route::group(['prefix' => '/admin'], function() {
